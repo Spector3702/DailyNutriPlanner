@@ -19,3 +19,14 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`everyday_nutrition` (
     FOREIGN KEY (`Name`) REFERENCES `foodstuff`(`Name`) 
     ON DELETE CASCADE ON UPDATE CASCADE
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
+    `Sno` char(8),
+    `Name` varchar(19),
+    `Other_name` varchar(60),
+    `English_name` varchar(30),
+    `Describe` varchar(60),
+    PRIMARY KEY (`Sno`)
+    UNIQUE (`Name`)
+    
+) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
