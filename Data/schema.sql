@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
     `Other_name` varchar(60),
     `English_name` varchar(30),
     `Describe` varchar(60),
-    PRIMARY KEY (`Sno`)
+    PRIMARY KEY (`Sno`),
     UNIQUE (`Name`)
     
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
