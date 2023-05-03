@@ -49,12 +49,12 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
 CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`personal_info` (
     `Email` varchar(60),
     `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+'),
-    `Sex` ENUM('male','female'),
+    `Gender` ENUM('male','female'),
     `Weight` float,
     `Height` float,
     `Work_load` ENUM('low','medium','high'),
     PRIMARY KEY (`Email`),
     -- error , age isn't unique. insert a new primary key? ex. index or type or serial no.
-    FOREIGN KEY (`Age`) REFERENCES `recommended_nutrition`(`Age`) 
+    FOREIGN KEY (`Age`, `Gender`) REFERENCES `recommended_nutrition`(`Age`, `Gender`) 
     ON DELETE SET NULL ON UPDATE CASCADE
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
