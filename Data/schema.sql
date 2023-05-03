@@ -1,19 +1,15 @@
 CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`foodstuff` (
     `Sno` char(8),
-    `Name` varchar(19),
+    `Name` varchar(19), -- select ? 
     `Other_name` varchar(60),
     `English_name` varchar(30),
-    `Describe` varchar(60),
-<<<<<<< HEAD
-    PRIMARY KEY (`Sno`),    
-=======
+    `Describe` varchar(60), 
     PRIMARY KEY (`Sno`),
->>>>>>> origin/main
     UNIQUE (`Name`)
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`everyday_nutrition` (
-    `Name` varchar(19),
+    `Name` varchar(19), -- select ? 
     `Analysis_item` varchar(12),
     `Unit` varchar(4),
     `Content_per_unit` varchar(20),
@@ -25,9 +21,8 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`everyday_nutrition` (
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
-<<<<<<< HEAD
-    `Gender` varchar(6),
-    `Age` varchar(5),
+    `Gender` ENUM('male','female'),
+    `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+'),
     `Numbers_of_people` int,
     `Calorie` float,
     `Protein` float,
@@ -48,14 +43,18 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
     `Na` float,
     `K` float,
     PRIMARY KEY (`Gender`,`Age`)
-=======
-    `Sno` char(8),
-    `Name` varchar(19),
-    `Other_name` varchar(60),
-    `English_name` varchar(30),
-    `Describe` varchar(60),
-    PRIMARY KEY (`Sno`),
-    UNIQUE (`Name`)
->>>>>>> origin/main
     
+) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`personal_info` (
+    `Email` varchar(60),
+    `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+'),
+    `Sex` ENUM('male','female'),
+    `Weight` float,
+    `Height` float,
+    `Work_load` ENUM('low','medium','high'),
+    PRIMARY KEY (`Email`),
+    -- error , age isn't unique. insert a new primary key? ex. index or type or serial no.
+    FOREIGN KEY (`Age`) REFERENCES `recommended_nutrition`(`Age`) 
+    ON DELETE SET NULL ON UPDATE CASCADE
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
