@@ -57,16 +57,16 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`personal_info` (
     ON DELETE CASCADE ON UPDATE CASCADE
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS DailyNutriPlanner.`record` (
-    Email varchar(60),
-    Name varchar(60),
-    Sno char(8),
-    Date DATETIME,
-    UNIQUE (Email),
-    UNIQUE (Name),
-    UNIQUE (Sno),
-    PRIMARY KEY (Email,`Name`,`Date`),
-    FOREIGN KEY (Email) REFERENCES personal_info(`Email`) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (Name) REFERENCES foodstuff(`Name`) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (Sno) REFERENCES foodstuff(`Sno`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`record` (
+    `Email` varchar(60),
+    `Name` varchar(60),
+    `Sno` char(8),
+    `Date` DATETIME,
+    UNIQUE (`Email`),
+    UNIQUE (`Name`),
+    UNIQUE (`Sno`),
+    PRIMARY KEY (`Email`,`Name`,`Date`),
+    FOREIGN KEY (`Email`) REFERENCES `personal_info`(`Email`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`Name`) REFERENCES `foodstuff`(`Name`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`Sno`) REFERENCES `foodstuff`(`Sno`) ON DELETE CASCADE ON UPDATE CASCADE
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
