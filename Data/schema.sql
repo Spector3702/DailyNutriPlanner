@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`foodstuff` (
     `Sno` char(8),
     `Name` varchar(60), -- select ? 
     `Other_name` varchar(60),
-    `English_name` varchar(30),
+    `English_name` varchar(200),
     `Describe` varchar(60), 
     PRIMARY KEY (`Sno`),
     UNIQUE (`Name`)
