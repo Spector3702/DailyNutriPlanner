@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`everyday_nutrition` (
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
-    `Gender` ENUM('male','female') NOT NULL,
-    `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+') NOT NULL,
+    `Gender` ENUM('male','female'),
+    `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+'),
     `Numbers_of_people` int,
     `Calorie` float,
     `Protein` float,
@@ -42,11 +42,10 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
     `Zn` float,
     `Na` float,
     `K` float,
-    PRIMARY KEY (`serial_number`),
-    UNIQUE (`Gender`, `Age`)
+    PRIMARY KEY (`Gender`, `Age`)
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE TABLE `DailyNutriPlanner`.`personal_info` (
+CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`personal_info` (
     `Email` varchar(60),
     `Gender` ENUM('male','female'),
     `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+'),
