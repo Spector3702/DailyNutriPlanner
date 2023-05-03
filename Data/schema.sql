@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
     `Na` float,
     `K` float,
     PRIMARY KEY (`serial_number`),
-    CONSTRAINT recommended_nutrition_superkey UNIQUE (`Gender`, `Age`)
+    UNIQUE (`Gender`, `Age`)
     
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
