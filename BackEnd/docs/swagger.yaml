@@ -1,0 +1,566 @@
+basePath: /api/v1
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: |-
+    A Bulletin Board System backend base on golang
+    BBS 前後端溝通介面，每個 row 代表一個可使用的 API 實體
+  title: bbs-backend API Docs
+  version: "1.0"
+paths:
+  /comments:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: postId
+        in: formData
+        name: postId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get all comments of the post
+      tags:
+      - comments
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: postId
+        in: formData
+        name: postId
+        required: true
+        type: integer
+      - description: authorId
+        in: formData
+        name: authorId
+        required: true
+        type: integer
+      - description: content
+        in: formData
+        name: content
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "500":
+          description: Internal Server Error
+      summary: Create a comment
+      tags:
+      - comments
+  /comments/:id:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Delete the comment
+      tags:
+      - comments
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "500":
+          description: Internal Server Error
+      summary: Get a comment
+      tags:
+      - comments
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: content
+        in: formData
+        name: content
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Update the comment
+      tags:
+      - comments
+  /friends:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: uid
+        in: formData
+        name: uid
+        required: true
+        type: integer
+      - description: targetUid
+        in: formData
+        name: targetUid
+        required: true
+        type: integer
+      - description: status
+        in: formData
+        name: status
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "500":
+          description: Internal Server Error
+      summary: Add Friend
+      tags:
+      - friends
+  /friends/:id:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: uid
+        in: formData
+        name: uid
+        required: true
+        type: integer
+      - description: targetUid
+        in: formData
+        name: targetUid
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Delete the friendship
+      tags:
+      - friends
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: uid
+        in: path
+        name: uid
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get the user's all friends
+      tags:
+      - friends
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: uid
+        in: formData
+        name: uid
+        required: true
+        type: integer
+      - description: targetUid
+        in: formData
+        name: targetUid
+        required: true
+        type: integer
+      - description: status
+        in: formData
+        name: status
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Update the friend
+      tags:
+      - friends
+  /posts:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: topic
+        in: formData
+        name: topic
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get all posts of the topic
+      tags:
+      - posts
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: topic
+        in: formData
+        name: topic
+        required: true
+        type: string
+      - description: authorId
+        in: formData
+        name: authorId
+        required: true
+        type: integer
+      - description: title
+        in: formData
+        name: title
+        required: true
+        type: string
+      - description: content
+        in: formData
+        name: content
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "500":
+          description: Internal Server Error
+      summary: Create a post
+      tags:
+      - posts
+  /posts/:id:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Delete the post
+      tags:
+      - posts
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get the post
+      tags:
+      - posts
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: title
+        in: formData
+        name: title
+        type: string
+      - description: content
+        in: formData
+        name: content
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Update the post
+      tags:
+      - posts
+  /topics:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get all topics
+      tags:
+      - topics
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: name
+        in: formData
+        name: name
+        required: true
+        type: string
+      - description: description
+        in: formData
+        name: description
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "500":
+          description: Internal Server Error
+      summary: Create a topic
+      tags:
+      - topics
+  /topics/:id:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Delete the topic
+      tags:
+      - topics
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get the topic
+      tags:
+      - topics
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: name
+        in: formData
+        name: name
+        type: string
+      - description: description
+        in: formData
+        name: description
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Update the topic
+      tags:
+      - topics
+  /users:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items: {}
+            type: array
+        "500":
+          description: Internal Server Error
+      summary: Get all users' information
+      tags:
+      - users
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: nickname
+        in: formData
+        name: nickname
+        required: true
+        type: string
+      - description: email
+        in: formData
+        name: email
+        required: true
+        type: string
+      - description: password
+        in: formData
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "500":
+          description: Internal Server Error
+      summary: Register a new user
+      tags:
+      - users
+  /users/:id:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: uid
+        in: path
+        name: uid
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: delete the user
+      tags:
+      - users
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: uid
+        in: path
+        name: uid
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema: {}
+        "500":
+          description: Internal Server Error
+      summary: Get the user's information
+      tags:
+      - users
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: uid
+        in: path
+        name: uid
+        required: true
+        type: integer
+      - description: nickname
+        in: formData
+        name: nickname
+        required: true
+        type: string
+      - description: password
+        in: formData
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: update the user
+      tags:
+      - users
+schemes:
+- http,https
+swagger: "2.0"
