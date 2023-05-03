@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`foodstuff` (
     `Sno` char(8),
-    `Name` varchar(19), -- select ? 
+    `Name` varchar(60), -- select ? 
     `Other_name` varchar(60),
     `English_name` varchar(30),
     `Describe` varchar(60), 
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`foodstuff` (
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`everyday_nutrition` (
-    `Name` varchar(19), -- select ? 
+    `Name` varchar(60), -- select ? 
     `Analysis_item` varchar(12),
     `Unit` varchar(4),
     `Content_per_unit` varchar(20),
@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`everyday_nutrition` (
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
-    `Gender` ENUM('male','female'),
-    `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+'),
+    `Gender` ENUM('male','female') NOT NULL,
+    `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+') NOT NULL,
     `Numbers_of_people` int,
     `Calorie` float,
     `Protein` float,
@@ -42,19 +42,18 @@ CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`recommended_nutrition` (
     `Zn` float,
     `Na` float,
     `K` float,
-    PRIMARY KEY (`Gender`,`Age`)
-    
+    PRIMARY KEY (`Age`, `Gender`),
+    UNIQUE KEY `gender_age_unique` (`Gender`, `Age`)
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `DailyNutriPlanner`.`personal_info` (
+CREATE TABLE `DailyNutriPlanner`.`personal_info` (
     `Email` varchar(60),
-    `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+'),
     `Gender` ENUM('male','female'),
+    `Age` ENUM('<1','1-6','7-12','13-15','16-18','19-44','45-64','65-74','75+'),
     `Weight` float,
     `Height` float,
     `Work_load` ENUM('low','medium','high'),
     PRIMARY KEY (`Email`),
-    -- error , age isn't unique. insert a new primary key? ex. index or type or serial no.
-    FOREIGN KEY (`Age`, `Gender`) REFERENCES `recommended_nutrition`(`Age`, `Gender`) 
-    ON DELETE SET NULL ON UPDATE CASCADE
+    FOREIGN KEY (`Gender`, `Age`) REFERENCES `recommended_nutrition`(`Gender`, `Age`)
+    ON DELETE CASCADE ON UPDATE CASCADE
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
