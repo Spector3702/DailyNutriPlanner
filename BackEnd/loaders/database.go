@@ -1,10 +1,9 @@
 package loaders
 
 import (
-	"bbs_backend/configs"
-	"bbs_backend/entity"
+	"BackEnd/configs"
+	"BackEnd/entity"
 
-	// "bbs_backend/entity"
 	"fmt"
 
 	"gorm.io/driver/mysql"
@@ -25,7 +24,7 @@ func setDBConnection() *gorm.DB {
 		fmt.Println("Connect DB failed: ", err)
 		panic(err)
 	}
-	db.AutoMigrate(&entity.User{})
+	db.AutoMigrate(&entity.RecommendedNutrition{})
 
 	return db.Session(&gorm.Session{PrepareStmt: true})
 }

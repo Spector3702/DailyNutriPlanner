@@ -1,10 +1,10 @@
 package main
 
 import (
-	"bbs_backend/loaders"
-	r "bbs_backend/routers"
+	"BackEnd/loaders"
+	r "BackEnd/routers"
 
-	_ "bbs_backend/docs"
+	_ "BackEnd/docs"
 
 	"github.com/gin-gonic/gin"
 

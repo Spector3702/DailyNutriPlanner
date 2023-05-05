@@ -1,4 +1,4 @@
-module bbs_backend
+module BackEnd
 
 go 1.19
 

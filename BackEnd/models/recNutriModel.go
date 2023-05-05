@@ -1,24 +1,24 @@
 package model
 
 import (
-	"bbs_backend/entity"
-	"bbs_backend/loaders"
+	"BackEnd/entity"
+	"BackEnd/loaders"
 	"fmt"
 )
 
-type UserModel interface {
-	GetAll() (*[]entity.User, error)
-	Create(user *entity.User) (err error)
+type RecNutriModel interface {
+	GetAll() (*[]entity.RecommendedNutrition, error)
+	Create(user *entity.RecommendedNutrition) (err error)
 }
 
-type userModel struct {
+type recNutriModel struct {
 }
 
-func NewUserModel() UserModel {
-	return &userModel{}
+func NewRecNutriModel() RecNutriModel {
+	return &recNutriModel{}
 }
 
-func (r *userModel) Create(user *entity.User) (err error) {
+func (r *recNutriModel) Create(user *entity.RecommendedNutrition) (err error) {
 	result := loaders.DB.Debug().Create(user)
 	err = result.Error
 	if result.Error != nil {
@@ -30,8 +30,8 @@ func (r *userModel) Create(user *entity.User) (err error) {
 	return
 }
 
-func (r *userModel) Get(uid int64) (*entity.User, error) {
-	user := &entity.User{}
+func (r *recNutriModel) Get(uid int64) (*entity.RecommendedNutrition, error) {
+	user := &entity.RecommendedNutrition{}
 	err := loaders.DB.First(user, "id = ?", uid).Error
 	if err != nil {
 		return nil, err
@@ -40,8 +40,8 @@ func (r *userModel) Get(uid int64) (*entity.User, error) {
 	}
 }
 
-func (r *userModel) GetAll() (*[]entity.User, error) {
-	users := &[]entity.User{}
+func (r *recNutriModel) GetAll() (*[]entity.RecommendedNutrition, error) {
+	users := &[]entity.RecommendedNutrition{}
 	err := loaders.DB.Find(users).Error
 	if err != nil {
 		return nil, err
@@ -50,7 +50,7 @@ func (r *userModel) GetAll() (*[]entity.User, error) {
 	}
 }
 
-func (r *userModel) UpdateUser(user *entity.User) (err error) {
+func (r *recNutriModel) UpdateUser(user *entity.RecommendedNutrition) (err error) {
 	result := loaders.DB.Save(&user)
 	err = result.Error
 	if result.RowsAffected != 1 {
@@ -60,8 +60,8 @@ func (r *userModel) UpdateUser(user *entity.User) (err error) {
 	return
 }
 
-func (r *userModel) Delete(id int64) error {
-	res := loaders.DB.Delete(&entity.User{}, "id = ?", id)
+func (r *recNutriModel) Delete(id int64) error {
+	res := loaders.DB.Delete(&entity.RecommendedNutrition{}, "id = ?", id)
 	if res.RowsAffected < 1 {
 		return fmt.Errorf("row with id=%d cannot be deleted because it doesn't exist", id)
 	}

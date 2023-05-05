@@ -1,29 +1,29 @@
 package v1
 
 import (
-	. "bbs_backend/models"
-	service "bbs_backend/services"
+	. "BackEnd/models"
+	service "BackEnd/services"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
 // UserRouter a contract what this router can do
-type UserRouter interface {
+type RecNutriRouter interface {
 	Setup(rg *gin.RouterGroup)
 }
 
-type userRouter struct {
-	model UserModel
+type recNutriRouter struct {
+	model RecNutriModel
 }
 
-func NewUserRouter(m UserModel) UserRouter {
-	return &userRouter{
+func NewRecNutriRouter(m RecNutriModel) RecNutriRouter {
+	return &recNutriRouter{
 		model: m,
 	}
 }
 
-func (r *userRouter) Setup(rg *gin.RouterGroup) {
+func (r *recNutriRouter) Setup(rg *gin.RouterGroup) {
 	user := rg.Group("v1/users")
 	user.POST("/", r.CreateUser)
 	user.GET("/", r.GetUsers)
@@ -43,12 +43,11 @@ func (r *userRouter) Setup(rg *gin.RouterGroup) {
 // @Success      201  {object}  nil
 // @Failure      500  {object}  nil
 // @Router       /users [post]
-func (r *userRouter) CreateUser(c *gin.Context) {
-	name := c.PostForm("nickname")
-	email := c.PostForm("email")
-	passwd := c.PostForm("password")
+func (r *recNutriRouter) CreateUser(c *gin.Context) {
+	gender := c.PostForm("gender")
+	age := c.PostForm("age")
 	// headshot := c.DefaultPostForm("headshot", "")
-	user, err := service.UserService.CreateUser(name, email, passwd)
+	user, err := service.RecNutriService.CreateUser(gender, age)
 	if err != nil {
 		c.JSON(http.StatusConflict,
 			gin.H{"message": "Failed to create user"})
@@ -65,7 +64,7 @@ func (r *userRouter) CreateUser(c *gin.Context) {
 // @Success      200  {object}  []model.UserModel
 // @Failure      500  {object}  nil
 // @Router       /users [get]
-func (r *userRouter) GetUsers(c *gin.Context) {
+func (r *recNutriRouter) GetUsers(c *gin.Context) {
 	users, _ := r.model.GetAll()
 	c.IndentedJSON(http.StatusOK, users)
 }
@@ -81,7 +80,7 @@ func (r *userRouter) GetUsers(c *gin.Context) {
 // @Success      200  {object}  nil
 // @Failure      500  {object}  nil
 // @Router       /users/:id [put]
-func (r *userRouter) UpdateUser(c *gin.Context) {
+func (r *recNutriRouter) UpdateUser(c *gin.Context) {
 }
 
 // DeleteUser    godoc
@@ -93,7 +92,7 @@ func (r *userRouter) UpdateUser(c *gin.Context) {
 // @Success      200  {object}  nil
 // @Failure      500  {object}  nil
 // @Router       /users/:id [delete]
-func (r *userRouter) DeleteUser(c *gin.Context) {
+func (r *recNutriRouter) DeleteUser(c *gin.Context) {
 }
 
 // GetUser       godoc
@@ -105,6 +104,6 @@ func (r *userRouter) DeleteUser(c *gin.Context) {
 // @Success      200  {object}  model.UserModel
 // @Failure      500  {object}  nil
 // @Router       /users/:id [get]
-func (r *userRouter) GetUser(c *gin.Context) {
+func (r *recNutriRouter) GetUser(c *gin.Context) {
 
 }
