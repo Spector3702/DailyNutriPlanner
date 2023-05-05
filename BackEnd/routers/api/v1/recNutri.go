@@ -2,6 +2,7 @@ package v1
 
 import (
 	. "BackEnd/models"
+
 	// service "BackEnd/services"
 	"net/http"
 
@@ -26,59 +27,48 @@ func NewRecNutriRouter(m RecNutriModel) RecNutriRouter {
 func (r *recNutriRouter) Setup(rg *gin.RouterGroup) {
 	recNutri := rg.Group("v1/recNutri")
 	recNutri.GET("/", r.GetAllRecNutris)
-	recNutri.PUT("/:uid", r.UpdateUser)
-	recNutri.DELETE("/:uid", r.DeleteUser)
-	recNutri.GET("/:uid", r.GetUser)
+	recNutri.GET("/nutri", r.GetNutriByGenderAndAge) // ex: localhost:8080/api/v1/recNutri/nutri?gender=male&age=19-44
 }
 
-// GetUsers 	 godoc
-// @Summary      Get all users' information
-// @Tags         recNutris
-// @Accept       json
-// @Produce      json
-// @Success      200  {object}  []model.RecNutriModel
-// @Failure      500  {object}  nil
-// @Router       /recNutri [get]
+// get all recNutri data
 func (r *recNutriRouter) GetAllRecNutris(c *gin.Context) {
 	recNutri, _ := r.model.GetAll()
 	c.IndentedJSON(http.StatusOK, recNutri)
 }
 
-// UpdateUser    godoc
-// @Summary      update the user
-// @Tags         users
-// @Accept       json
-// @Produce      json
-// @Param uid path int true "uid"
-// @Param nickname formData string true "nickname"
-// @Param password formData string true "password"
-// @Success      200  {object}  nil
-// @Failure      500  {object}  nil
-// @Router       /users/:id [put]
-func (r *recNutriRouter) UpdateUser(c *gin.Context) {
-}
+// get nutritions based on gender & age from front-end
+func (r *recNutriRouter) GetNutriByGenderAndAge(c *gin.Context) {
+	gender := c.Query("gender")
+	age := c.Query("age")
 
-// DeleteUser    godoc
-// @Summary      delete the user
-// @Tags         users
-// @Accept       json
-// @Produce      json
-// @Param uid path int true "uid"
-// @Success      200  {object}  nil
-// @Failure      500  {object}  nil
-// @Router       /users/:id [delete]
-func (r *recNutriRouter) DeleteUser(c *gin.Context) {
-}
+	recommendedNutrition, err := r.model.GetByGenderAndAge(gender, age)
 
-// GetUser       godoc
-// @Summary      Get the user's information
-// @Tags         users
-// @Accept       json
-// @Produce      json
-// @Param uid path int false "uid"
-// @Success      200  {object}  model.UserModel
-// @Failure      500  {object}  nil
-// @Router       /users/:id [get]
-func (r *recNutriRouter) GetUser(c *gin.Context) {
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
 
+	c.IndentedJSON(http.StatusOK, gin.H{
+		"Gender":          gender,
+		"Age":             age,
+		"Calorie":         recommendedNutrition.Calorie,
+		"Protein":         recommendedNutrition.Protein,
+		"Fat":             recommendedNutrition.Fat,
+		"Carbohydrate":    recommendedNutrition.Carbohydrate,
+		"VitaminB1":       recommendedNutrition.VitaminB1,
+		"VitaminB2":       recommendedNutrition.VitaminB2,
+		"VitaminC":        recommendedNutrition.VitaminC,
+		"Nicotine":        recommendedNutrition.Nicotine,
+		"VitaminB6":       recommendedNutrition.VitaminB6,
+		"VitaminA":        recommendedNutrition.VitaminA,
+		"VitaminE":        recommendedNutrition.VitaminE,
+		"Ca":              recommendedNutrition.Ca,
+		"P":               recommendedNutrition.P,
+		"Fe":              recommendedNutrition.Fe,
+		"Mg":              recommendedNutrition.Mg,
+		"Zn":              recommendedNutrition.Zn,
+		"Na":              recommendedNutrition.Na,
+		"K":               recommendedNutrition.K,
+		"NumbersOfPeople": recommendedNutrition.NumbersOfPeople,
+	})
 }
