@@ -25,3 +25,7 @@ type RecommendedNutrition struct {
 	Na              float64 `json:"na"`
 	K               float64 `json:"k"`
 }
+
+func (RecommendedNutrition) TableName() string {
+	return "recommended_nutrition"
+}

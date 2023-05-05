@@ -2,7 +2,7 @@ package v1
 
 import (
 	. "BackEnd/models"
-	service "BackEnd/services"
+	// service "BackEnd/services"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -24,49 +24,24 @@ func NewRecNutriRouter(m RecNutriModel) RecNutriRouter {
 }
 
 func (r *recNutriRouter) Setup(rg *gin.RouterGroup) {
-	user := rg.Group("v1/users")
-	user.POST("/", r.CreateUser)
-	user.GET("/", r.GetUsers)
-	user.PUT("/:uid", r.UpdateUser)
-	user.DELETE("/:uid", r.DeleteUser)
-	user.GET("/:uid", r.GetUser)
-}
-
-// CreateUser 	 godoc
-// @Summary      Register a new user
-// @Tags         users
-// @Accept       json
-// @Produce      json
-// @Param nickname formData string true "nickname"
-// @Param email formData string true "email"
-// @Param password formData string true "password"
-// @Success      201  {object}  nil
-// @Failure      500  {object}  nil
-// @Router       /users [post]
-func (r *recNutriRouter) CreateUser(c *gin.Context) {
-	gender := c.PostForm("gender")
-	age := c.PostForm("age")
-	// headshot := c.DefaultPostForm("headshot", "")
-	user, err := service.RecNutriService.CreateUser(gender, age)
-	if err != nil {
-		c.JSON(http.StatusConflict,
-			gin.H{"message": "Failed to create user"})
-	}
-
-	c.JSON(201, user)
+	recNutri := rg.Group("v1/recNutri")
+	recNutri.GET("/", r.GetAllRecNutris)
+	recNutri.PUT("/:uid", r.UpdateUser)
+	recNutri.DELETE("/:uid", r.DeleteUser)
+	recNutri.GET("/:uid", r.GetUser)
 }
 
 // GetUsers 	 godoc
 // @Summary      Get all users' information
-// @Tags         users
+// @Tags         recNutris
 // @Accept       json
 // @Produce      json
-// @Success      200  {object}  []model.UserModel
+// @Success      200  {object}  []model.RecNutriModel
 // @Failure      500  {object}  nil
-// @Router       /users [get]
-func (r *recNutriRouter) GetUsers(c *gin.Context) {
-	users, _ := r.model.GetAll()
-	c.IndentedJSON(http.StatusOK, users)
+// @Router       /recNutri [get]
+func (r *recNutriRouter) GetAllRecNutris(c *gin.Context) {
+	recNutri, _ := r.model.GetAll()
+	c.IndentedJSON(http.StatusOK, recNutri)
 }
 
 // UpdateUser    godoc
