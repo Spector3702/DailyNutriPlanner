@@ -2,7 +2,7 @@ package entity
 
 type EverydayNutrition struct {
 	Name                    string `gorm:"" json:"name"`
-	Analysis_item           string `gorm:"" json:"analysis_item"`
+	Analysis_item           string `gorm:"primaryKey" json:"analysis_item"`
 	Unit                    string `json:"unit"`
 	Content_per_unit        string `json:"content_per_unit"`
 	Weight_per_unit         string `json:"weight_per_unit"`
