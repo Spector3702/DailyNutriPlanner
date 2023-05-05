@@ -1,15 +1,10 @@
 package main
 
 import (
-	"bbs_backend/loaders"
-	r "bbs_backend/routers"
-
-	_ "bbs_backend/docs"
+	"BackEnd/loaders"
+	r "BackEnd/routers"
 
 	"github.com/gin-gonic/gin"
-
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 //	@title			bbs-backend API Docs
@@ -30,9 +25,6 @@ func main() {
 	server.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{})
 	})
-
-	url := ginSwagger.URL("http://localhost:8080/swagger/doc.json") // The url pointing to API definition
-	server.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 
 	server.Run(":8080")
 }

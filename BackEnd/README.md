@@ -1,8 +1,14 @@
-# BBS-Backend
+# Backend
 
-## Download Package
+## Download Package (for running)
 ```
 go mod download
+```
+
+## Download Pachage (for developing)
+```
+go mod download
+go install github.com/swaggo/swag/cmd/swag
 ```
 
 ## Start Project
