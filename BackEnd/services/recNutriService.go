@@ -18,6 +18,7 @@ type recNutriService struct {
 	m model.RecNutriModel
 }
 
+// analysis needed nutrition by given record
 func (s *recNutriService) AnalysisByRecord(gender, age string, nutritionStr ...string) (*entity.RecommendedNutrition, error) {
 	recordNutri := &entity.RecommendedNutrition{}
 	nutritionFields := []string{"Calorie", "Protein", "Fat", "Carbohydrate", "VitaminB1", "VitaminB2", "VitaminC", "Nicotine", "VitaminB6", "VitaminA", "VitaminE", "Ca", "P", "Fe", "Mg", "Zn", "Na", "K"}
