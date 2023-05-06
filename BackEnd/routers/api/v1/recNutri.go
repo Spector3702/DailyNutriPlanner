@@ -2,6 +2,7 @@ package v1
 
 import (
 	. "BackEnd/models"
+	service "BackEnd/services"
 
 	// service "BackEnd/services"
 	"net/http"
@@ -28,6 +29,7 @@ func (r *recNutriRouter) Setup(rg *gin.RouterGroup) {
 	recNutri := rg.Group("v1/recNutri")
 	recNutri.GET("/", r.GetAllRecNutris)
 	recNutri.GET("/nutri", r.GetNutriByGenderAndAge) // ex: localhost:8080/api/v1/recNutri/nutri?gender=male&age=19-44
+	recNutri.POST("/analysis", r.GetAnalysis)
 }
 
 // get all recNutri data
@@ -71,4 +73,26 @@ func (r *recNutriRouter) GetNutriByGenderAndAge(c *gin.Context) {
 		"K":               recommendedNutrition.K,
 		"NumbersOfPeople": recommendedNutrition.NumbersOfPeople,
 	})
+}
+
+// get analysis according to record and recNutri
+func (r *recNutriRouter) GetAnalysis(c *gin.Context) {
+	formFields := []string{"gender", "age", "calorie", "protein", "fat", "carbohydrate", "vitaminB1", "vitaminB2", "vitaminC", "nicotine", "vitaminB6", "vitaminA", "vitaminE", "ca", "p", "fe", "mg", "zn", "na", "k"}
+	formValues := make([]string, len(formFields))
+
+	for i, field := range formFields {
+		formValues[i] = c.PostForm(field)
+	}
+
+	gender, age := formValues[0], formValues[1]
+	nutritionStr := formValues[2:]
+
+	analysis, err := service.RecNutriService.AnalysisByRecord(gender, age, nutritionStr...)
+
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"analysis": analysis})
 }
