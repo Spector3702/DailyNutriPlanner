@@ -9,7 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// UserRouter a contract what this router can do
+// RecNutriRouter a contract what this router can do
 type RecNutriRouter interface {
 	Setup(rg *gin.RouterGroup)
 }
