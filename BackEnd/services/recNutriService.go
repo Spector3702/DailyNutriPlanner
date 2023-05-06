@@ -40,6 +40,8 @@ func parseFloat(str string) float64 {
 	return f
 }
 
+// record *entity.Record ?
+
 func subtractRecommended(recmd, record *entity.RecommendedNutrition) *entity.RecommendedNutrition {
 	return &entity.RecommendedNutrition{
 		Calorie:      recmd.Calorie - record.Calorie,

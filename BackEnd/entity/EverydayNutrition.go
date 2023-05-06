@@ -9,6 +9,12 @@ type EverydayNutrition struct {
 	ContentPerUnitWeight float64 `gorm:"column:Content_per_unit_weight" json:"content_per_unit_weight"`
 }
 
+// Define foreign key relationship with foodstuff
+func (e *EverydayNutrition) Foodstuff() Foodstuff {
+	return Foodstuff{Name: e.Name}
+}
+
+// Define table name for GORM
 func (EverydayNutrition) TableName() string {
 	return "everyday_nutrition"
 }
