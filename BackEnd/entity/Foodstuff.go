@@ -8,7 +8,7 @@ type Foodstuff struct {
 	Describe    string `json:"describe"`
 }
 
-func (Foodstuff) TableName() string {
+func (f *Foodstuff) TableName() string {
 	return "foodstuff"
 }
 
