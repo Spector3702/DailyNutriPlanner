@@ -1,0 +1,190 @@
+/*字體*/
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    background-color:white;
+    display : flex;;
+    align-items: stretch;
+}
+
+.font {
+  font-family: 'Josefin Sans', sans-serif;
+}
+/*包住整個的*/
+.warp{
+  /*margin: 0 auto;*/
+  display: flex;
+  /*flex-direction: row;*/
+}
+/*最上面的區塊*/
+.box1{
+  width: 100%/*1520px*/;
+  height: 50px;
+  position: relative;
+  background-color: white;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+}
+/*home page文字*/
+#home{
+  
+  left:70px;
+  top:20px;
+  position: relative;
+  text-decoration:none;
+  color: black;
+}
+#home_icon{
+  width: 20px;
+  height: 20px;
+  left:65px;
+  top:15px;
+  position: relative;
+}
+/*login按鈕設定*/
+#login{
+  width:75px;
+  height: 30px;
+  left:1200px;
+  top:25%;
+  position: relative;
+  text-align: center;
+  line-height: 30px;
+
+  border-radius: 10px;
+  background-color: #996AEC;
+  color:mintcream;
+  text-decoration:none;
+}
+/*第二段*/
+.box2{
+  width: 100%/*1520px*/;
+  height: 700px;
+  left:0px;
+  top:50px;
+  position: absolute;
+  background-image: url('img/pic4.jpg');
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+  background-color: whitesmoke;
+}
+
+
+/*包在box2的搜尋區塊*/
+.box3{ 
+  width:  1220px;
+  height: 50px; 
+  height: 300px;
+  left:250px;
+  top:250px;
+  border-radius: 10px;
+  position: absolute;
+  background-color:snow;
+}
+
+/*包在box2的功能欄位區塊*/
+.choose_box{
+  width:150px;
+  height: 300px;
+  left:50px;
+  top:100px;
+  border-radius: 10px;
+  position: absolute;
+  background-color:snow;
+}
+/*查詢個人紀錄*/
+#record{
+  width:80%;
+  height: 50px;
+  text-align: center;
+  line-height:50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #996AEC;
+  color:mintcream;
+  text-decoration:none;
+}
+/*查詢食物成分*/
+#food{ 
+  width:80%;
+  height: 50px; 
+  top:62.5px;
+  text-align: center;
+  line-height:50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #996AEC;
+  color:mintcream;
+  text-decoration:none;
+}
+/*查詢每人標準攝取量*/
+#standard{
+  width:80%;
+  height: 50px; 
+  top:125px;
+  text-align: center;
+  line-height:50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #996AEC;
+  color:mintcream;
+  text-decoration:none;
+}
+/*新增個人飲食紀錄*/
+#update{
+  width:80%;
+  height: 50px;
+  top:187.5px;
+  text-align: center;
+  line-height:50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #996AEC;
+  color:mintcream;
+  text-decoration:none;
+}
+/*執行搜尋*/
+#go{
+  left:900px;
+  top:275px;
+  position: absolute;
+}
+
+/*以下為選項*/
+.sex{
+  left:50px;
+  top: 20px;
+  position: absolute; 
+}
+.age{
+  left:300px;
+  top: 20px;
+  position: absolute; 
+}
+.height{
+  left:50px;
+  top: 120px;
+  position: absolute; 
+}
+
+.weight{
+  left:300px;
+  top: 120px;
+  position: absolute; 
+}
+
+.food{
+  left:550px;
+  top: 120px;
+  position: absolute; 
+}
+.work{
+  left:50px;
+  top: 200px;
+  position: absolute;
+}

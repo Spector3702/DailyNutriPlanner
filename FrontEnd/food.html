@@ -1,0 +1,101 @@
+<!--主頁面-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>健康營養紀錄表</title>
+        <link rel="stylesheet" href="main_css.css">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600" rel="stylesheet">
+        <!--設定按鈕圖案-->
+        <style> 
+          input[type=button], input[type=submit], input[type=reset] {
+            background-color: black;
+            width: 250px;
+            border: none;
+            border-radius: 10px;
+            color:mintcream;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          </style>
+
+    </head>
+
+    <body>
+      <div class="warp">
+        <!--最上面小的區塊-->
+        <div class="box1" >
+          <img id="home_icon" src="img/home.png">
+          <a id="home" href="main.html">Home page</a>
+          <a id="login" href="login.html">Login</a>
+          <!--h5 class="home" >Home page</h5-->
+        </div>
+        <!--下面的區塊-->
+        <div class="box2">
+          <!--左邊選擇功能的區塊-->
+          <div class="choose_box">
+            <a id="record" href="food.html">查詢個人紀錄</a>
+            <a id="food" href="food.html">查詢食物成分</a>
+            <a id="standard" href="food.html">查詢標準攝取量</a>
+            <a id="update" href="food.html">新增飲食紀錄</a>
+          </div>
+
+          <!--搜尋的區塊-->
+          <div class="box3">
+          <form action="test.php" method="post">
+              <!--尚未編輯細項-->
+              <!--先簡略放幾個而已-->
+              <div class="sex">
+                <h5>性別:
+                <input id="input1" type="radio" name="gender" value="Male">男性
+                <input id="input2" type="radio" name="gender" value="Female">女性
+              </div>
+              </h5>
+              <div class="age">
+                <h5>年齡:   <select name="age">
+                  <option value="1-6">1-6</option>
+                  <option value="7-12">7-12</option>
+                  <option value="13-15">13-15</option>
+                  <option value="16-18">16-18</option>
+                  <option value="19-44">19-44</option>
+                  <option value="45-64">45-64</option>
+                  <option value="65-74">65-74</option>
+                  <option value="75up">75+</option>
+                  </select>
+                </h5>
+              </div>
+              <div class="height">
+                <label for="email" class="ha-screen-reader">身高</label>
+                <input id="email" class="field__input" placeholder="e.g. 172">
+                
+              </div>
+
+              <div class="weight">
+                <label for="email" class="ha-screen-reader">體重</label>
+                <input id="email" class="field__input" placeholder="e.g. 56">
+              </div>
+
+              <div class="food">
+                <label for="email" class="ha-screen-reader">食物</label>
+                <input id="email" class="field__input" placeholder="e.g. 蘋果">
+              </div>
+              
+              <div class="work">
+                <h5>工作量: 
+                <input type="radio" name="work" value="High">高
+                <input type="radio" name="work" value="Medium">中
+                <input type="radio" name="work" value="Low">低</h5>
+              </div>
+              
+              <input id="go" type="submit" value="go →" onclick="location.href='query.html'">
+            </form>
+          </div>
+          </div>
+        </div>
+    <script src="script.js"></script>
+
+    </body>
+</html>
