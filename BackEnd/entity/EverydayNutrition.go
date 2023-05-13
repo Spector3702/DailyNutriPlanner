@@ -1,17 +1,20 @@
 package entity
 
 type EverydayNutrition struct {
-	Name                    string `gorm:"" json:"name"`
-	Analysis_item           string `gorm:"primaryKey" json:"analysis_item"`
-	Unit                    string `json:"unit"`
-	Content_per_unit        string `json:"content_per_unit"`
-	Weight_per_unit         string `json:"weight_per_unit"`
-	Content_per_unit_weight string `json:"content_per_unit_weight"`
-
-	//?
-
+	Name                 string  `gorm:"primaryKey;size:60" json:"name"`
+	AnalysisItem         string  `gorm:"primaryKey;size:12" json:"analysis_item"`
+	Unit                 string  `gorm:"size:4" json:"unit"`
+	ContentPerUnit       string  `gorm:"column:Content_per_unit" json:"content_per_unit"`
+	WeightPerUnit        string  `gorm:"column:Weight_per_unit" json:"weight_per_unit"`
+	ContentPerUnitWeight float64 `gorm:"column:Content_per_unit_weight" json:"content_per_unit_weight"`
 }
 
+// Define foreign key relationship with foodstuff
+func (e *EverydayNutrition) Foodstuff() Foodstuff {
+	return Foodstuff{Name: e.Name}
+}
+
+// Define table name for GORM
 func (EverydayNutrition) TableName() string {
 	return "everyday_nutrition"
 }
