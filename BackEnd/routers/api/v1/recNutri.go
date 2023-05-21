@@ -4,7 +4,6 @@ import (
 	. "BackEnd/models"
 	service "BackEnd/services"
 
-	// service "BackEnd/services"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -28,8 +27,10 @@ func NewRecNutriRouter(m RecNutriModel) RecNutriRouter {
 func (r *recNutriRouter) Setup(rg *gin.RouterGroup) {
 	recNutri := rg.Group("v1/recNutri")
 	recNutri.GET("/", r.GetAllRecNutris)
-	recNutri.GET("/nutri", r.GetNutriByGenderAndAge) // ex: localhost:8080/api/v1/recNutri/nutri?gender=male&age=19-44
-	recNutri.POST("/analysis", r.GetAnalysis)
+	recNutri.GET("/nutri/", r.GetNutriByGenderAndAge) // ex: localhost:8080/api/v1/recNutri/nutri?gender=male&age=19-44
+	recNutri.POST("/analysis/", r.GetAnalysis)
+	recNutri.GET("/calory/", r.GetCaloryByInfo)
+	recNutri.GET("/food/", r.GetRandFoodBySpecfNutri)
 }
 
 // get all recNutri data
@@ -95,4 +96,37 @@ func (r *recNutriRouter) GetAnalysis(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"analysis": analysis})
+}
+
+// get calory based on all needed info
+func (r *recNutriRouter) GetCaloryByInfo(c *gin.Context) {
+	weightStr := c.Query("weight")
+	heightStr := c.Query("height")
+	workload := c.Query("workload")
+	gender := c.Query("gender")
+	age := c.Query("age")
+
+	calory, err := service.RecNutriService.CalculateCaloryByInfo(weightStr, heightStr, workload, gender, age)
+
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"calory": calory})
+}
+
+// get a random food that has enough specific nutri
+func (r *recNutriRouter) GetRandFoodBySpecfNutri(c *gin.Context) {
+	nutri := c.Query("nutri")
+	need := c.Query("need")
+
+	food, err := service.RecNutriService.GetFoodFromNutriTable(nutri, need)
+
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"food": food})
 }

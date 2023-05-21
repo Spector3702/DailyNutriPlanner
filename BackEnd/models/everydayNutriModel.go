@@ -7,7 +7,7 @@ import (
 
 type EverydayNutriModel interface {
 	GetAll() (*[]entity.EverydayNutrition, error)
-	//GetByGenderAndAge(gender, age string) (*entity.RecommendedNutrition, error)
+	GetAllFoodByNeedNutri(nutri, need string) (*[]entity.EverydayNutrition, error)
 }
 
 type everydayNutriModel struct {
@@ -26,4 +26,14 @@ func (e *everydayNutriModel) GetAll() (*[]entity.EverydayNutrition, error) {
 	} else {
 		return EveNutris, nil
 	}
+}
+
+// get all food satisfied the needed nutri
+func (e *everydayNutriModel) GetAllFoodByNeedNutri(nutri, need string) (*[]entity.EverydayNutrition, error) {
+	eveNutris := &[]entity.EverydayNutrition{}
+	err := loaders.DB.Where("analysis_item = ? AND content_per_unit >= ?", nutri, need).Find(eveNutris).Error
+	if err != nil {
+		return nil, err
+	}
+	return eveNutris, nil
 }

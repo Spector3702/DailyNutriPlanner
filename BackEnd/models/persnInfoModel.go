@@ -9,6 +9,7 @@ import (
 type PersnInfoModel interface {
 	CreatePersnInfo(persnInfo *entity.PersonalInfo) (err error)
 	GetByEmail(email string) (*entity.PersonalInfo, error)
+	UpdatePersnInfo(persnInfo *entity.PersonalInfo) (err error)
 }
 
 type persnInfoModel struct {
@@ -41,4 +42,19 @@ func (p *persnInfoModel) GetByEmail(email string) (*entity.PersonalInfo, error) 
 		return nil, err
 	}
 	return personalInfo, nil
+}
+
+// update persnInfo by whole entity struct
+func (p *persnInfoModel) UpdatePersnInfo(persnInfo *entity.PersonalInfo) (err error) {
+	result := loaders.DB.Debug().Save(persnInfo)
+	err = result.Error
+
+	if err != nil {
+		return err
+	}
+	if result.RowsAffected != 1 {
+		fmt.Println("RowsAffected Number fault")
+	}
+
+	return
 }

@@ -45,3 +45,32 @@ func (s *persnInfoService) CreateByInfo(email, gender, age, weightStr, heightStr
 
 	return persnInfo, nil
 }
+
+func (s *persnInfoService) UpdateByInfo(email, gender, age, weightStr, heightStr, workload string) (*entity.PersonalInfo, error) {
+	// Convert weight and height strings to float64
+	weight, err := strconv.ParseFloat(weightStr, 64)
+	if err != nil {
+		return nil, err
+	}
+
+	height, err := strconv.ParseFloat(heightStr, 64)
+	if err != nil {
+		return nil, err
+	}
+
+	persnInfo := &entity.PersonalInfo{
+		Email:    email,
+		Gender:   gender,
+		Age:      age,
+		Weight:   weight,
+		Height:   height,
+		WorkLoad: workload,
+	}
+
+	err = s.m.UpdatePersnInfo(persnInfo)
+	if err != nil {
+		return nil, err
+	}
+
+	return persnInfo, nil
+}
