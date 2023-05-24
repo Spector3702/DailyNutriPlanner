@@ -133,5 +133,5 @@ func (s *recNutriService) GetFoodFromNutriTable(nutri, needStr string) (string, 
 	rand.Seed(time.Now().Unix())
 	i := rand.Int() % len(*foodlist)
 
-	return (*foodlist)[i].Name, err
+	return (*foodlist)[i].Name, err // return
 }

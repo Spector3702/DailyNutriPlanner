@@ -100,11 +100,11 @@ func (r *recNutriRouter) GetAnalysis(c *gin.Context) {
 
 // get calory based on all needed info
 func (r *recNutriRouter) GetCaloryByInfo(c *gin.Context) {
-	weightStr := c.Query("weight")
-	heightStr := c.Query("height")
-	workload := c.Query("workload")
-	gender := c.Query("gender")
-	age := c.Query("age")
+	weightStr := c.Query("weight")  // 從web接收weight
+	heightStr := c.Query("height")  // 從web接收height
+	workload := c.Query("workload") // 從web接收workload
+	gender := c.Query("gender")     // 從web接收gender
+	age := c.Query("age")           // 從web接收age
 
 	calory, err := service.RecNutriService.CalculateCaloryByInfo(weightStr, heightStr, workload, gender, age)
 
@@ -118,10 +118,9 @@ func (r *recNutriRouter) GetCaloryByInfo(c *gin.Context) {
 
 // get a random food that has enough specific nutri
 func (r *recNutriRouter) GetRandFoodBySpecfNutri(c *gin.Context) {
-	nutri := c.Query("nutri")
-	need := c.Query("need")
-
-	food, err := service.RecNutriService.GetFoodFromNutriTable(nutri, need)
+	nutri := c.Query("nutri")                                               // 從web接收nutri
+	need := c.Query("need")                                                 // 從web接收need
+	food, err := service.RecNutriService.GetFoodFromNutriTable(nutri, need) // servie 改記得改
 
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})

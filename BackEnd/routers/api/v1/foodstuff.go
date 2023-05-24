@@ -26,8 +26,8 @@ func NewFoodstuffRouter(m FoodstuffModel) FoodstuffRouter {
 func (r *foodstuffRouter) Setup(rg *gin.RouterGroup) {
 	foodstuff := rg.Group("v1/foodstuff")
 	//foodstuff.GET("/", r.GetAllFoodstuff)
-	foodstuff.GET("/name/:name", r.GetFoodstuffByName)
-	foodstuff.GET("/sno/:sno", r.GetFoodstuffBySno)
+	foodstuff.GET("/name/", r.GetFoodstuffByName)
+	foodstuff.GET("/sno/", r.GetFoodstuffBySno)
 }
 
 // get foodstuff based on name from front-end

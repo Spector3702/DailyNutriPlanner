@@ -8,6 +8,7 @@ import (
 type EverydayNutriModel interface {
 	GetAll() (*[]entity.EverydayNutrition, error)
 	GetAllFoodByNeedNutri(nutri, need string) (*[]entity.EverydayNutrition, error)
+	GetByName(name string) (*entity.EverydayNutrition, error)
 }
 
 type everydayNutriModel struct {
@@ -36,4 +37,13 @@ func (e *everydayNutriModel) GetAllFoodByNeedNutri(nutri, need string) (*[]entit
 		return nil, err
 	}
 	return eveNutris, nil
+}
+
+func (e *everydayNutriModel) GetByName(name string) (*entity.EverydayNutrition, error) {
+	Nutri := &entity.EverydayNutrition{}
+	err := loaders.DB.Where("name = ?", name).Find(Nutri).Error
+	if err != nil {
+		return nil, err
+	}
+	return Nutri, nil
 }
