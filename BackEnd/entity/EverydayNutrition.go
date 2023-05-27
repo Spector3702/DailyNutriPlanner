@@ -1,10 +1,10 @@
 package entity
 
 type EverydayNutrition struct {
-	Name           string `gorm:"primaryKey;size:60" json:"name"`
-	AnalysisItem   string `gorm:"primaryKey;size:60" json:"analysis_item"`
-	Unit           string `gorm:"size:4" json:"unit"`
-	ContentPerUnit string `gorm:"column:Content_per_unit" json:"content_per_unit"`
+	Name             string  `gorm:"primaryKey;size:60" json:"name"`
+	Analysis_item    string  `gorm:"primaryKey;size:60" json:"analysis_item"`
+	Unit             string  `gorm:"size:4" json:"unit"`
+	Content_per_unit float64 `gorm:"column:Content_per_unit" json:"content_per_unit"`
 }
 
 // Define foreign key relationship with foodstuff

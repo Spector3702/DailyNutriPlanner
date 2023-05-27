@@ -43,9 +43,10 @@ func (r *EverydayNutriRouter) GetNutriByName(c *gin.Context) {
 		return
 	}
 
-	c.IndentedJSON(http.StatusOK, gin.H{
-		"analysis_item":    Nutri.AnalysisItem, //always show ""
-		"Unit":             Nutri.Unit,
-		"Content_per_unit": Nutri.ContentPerUnit,
-	})
+	c.IndentedJSON(http.StatusOK, Nutri)
 }
+
+//
+//"analysis_item":    Nutri.Analysis_item, //always show ""
+//"Unit":             Nutri.Unit,
+//"Content_per_unit": Nutri.Content_per_unit,
