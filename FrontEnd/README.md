@@ -3,5 +3,7 @@ This is a website that can analyize your nutrients you lack basing on the food y
 
 ## Start Project 
 
-Open the LoginPage.html
+1. Download the Package
+
+2. Open the LoginPage.html
 
