@@ -1,0 +1,116 @@
+<!--<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">	
+  <title>Document</title>
+  <link rel="stylesheet" href="set.css">
+
+</head>
+<body>
+	<div class="box1">盒子1號(加了border線條)</div>
+  <div class="box2">盒子2號(再加了margin)</div>
+  <div class="box3">盒子3號(再加了padding)</div>
+  <div class="box4">盒子4號(再加了box-sizing)</div>
+  <script src="script.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊會員</title>
+    <link rel="stylesheet" href="RegisterPage_css.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600" rel="stylesheet">
+    <!--按鈕圖案-->
+    <style>
+        input[type=button],
+        input[type=submit],
+        input[type=reset] {
+            background-color: #996AEC;
+            width: 250px;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="warp">
+        <div class="box1">
+            <h1 class="hello">Welcome to</h1>
+            <h1 class="project_name">健康營養紀錄表</h1>
+        </div>
+
+        <div class="box2">
+            <div class="login">
+                <form id="Registerform">
+
+                    <h3>Register</h3>
+                    <div class="field field_v3">
+                        <label for="email" class="ha-screen-reader">E-mail</label>
+                        <input id="email" class="field__input" placeholder="e.g. nckues2023@gmail.com" required>
+                        <span class="field__label-wrap" aria-hidden="true">
+                            <span class="field__label">E-mail</span>
+                        </span>
+                    </div>
+                    <!-- 
+              <h5>Email:
+              <input type="text" name="UserEmail">
+              </h5>-->
+                    <h5>性別: <select id="gender" required>
+                            <option value="male">男性</option>
+                            <option value="female">女性</option>
+                        </select>
+                    </h5>
+                    <h5>年齡: <select id="age" required>
+                            <option value="1-6">1-6</option>
+                            <option value="7-12">7-12</option>
+                            <option value="13-15">13-15</option>
+                            <option value="16-18">16-18</option>
+                            <option value="19-44">19-44</option>
+                            <option value="45-64">45-64</option>
+                            <option value="65-74">65-74</option>
+                            <option value="75up">75+</option>
+                        </select>
+                    </h5>
+
+                    <div class="field field_v3">
+                        <label for="email" class="ha-screen-reader">體重</label>
+                        <input type="text" id="weight" class="field__input" placeholder="e.g. 56" required>
+                        <span class="field__label-wrap" aria-hidden="true">
+                            <span class="field__label">體重</span>
+                        </span>
+                    </div>
+                    <div class="field field_v3">
+                        <label for="email" class="ha-screen-reader">身高</label>
+                        <input type="text" id="height" class="field__input" placeholder="e.g. 172" required>
+                        <span class="field__label-wrap" aria-hidden="true">
+                            <span class="field__label">身高</span>
+                        </span>
+                    </div><br>
+
+                    <h5>工作量: <select id="workload" required>
+                            <option value="high">高</option>
+                            <option value="medium">中</option>
+                            <option value="low">低</option>
+                        </select>
+                    </h5>
+                    <input type="submit" value="註冊">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="Register.js"></script>
+
+
+</body>
+
+</html>

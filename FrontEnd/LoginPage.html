@@ -1,0 +1,70 @@
+<!--登入的頁面-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登入頁面</title>
+  <link rel="stylesheet" href="LoginPage_css.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600" rel="stylesheet">
+  <!--設定按鈕圖案-->
+  <style>
+    input[type=button],
+    input[type=submit],
+    input[type=reset] {
+      background-color: #996AEC;
+      width: 250px;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="warp">
+    <!--左邊的區塊-->
+    <div class="box1">
+      <img class="icon" src="img/diet.png" width="80" height="80">
+      <h1 class="hello">Welcome to</h1>
+      <h1 class="project_name">健康營養紀錄表</h1>
+      <h5 class="line">_______________________________</h5>
+      <h6 class="describe">飲食攝取是生活不可少的一件事，這是一個可以記錄食物並追蹤卡路里，<br>也可以查詢相關食物的營養成分的網站，請點選登入已進行使用。</h6>
+    </div>
+    <!--右邊的區塊-->
+    <div class="box2">
+      <div class="login">
+        <form id="Loginform">
+          <!--文字說明-->
+          <h3>Login</h3>
+          <h6 style="color:gray ; font-size:10px">please login to your account<br>and record your height and weight</h6>
+          <!--輸入欄位-->
+          <div class="field field_v3">
+            <label for="email" class="ha-screen-reader">E-mail</label>
+            <input id="email" class="field__input" placeholder="e.g. nckues2023@gmail.com">
+            <span class="field__label-wrap" aria-hidden="true">
+              <span class="field__label">E-mail</span>
+            </span>
+          </div>
+          <!--登入按鈕-->
+          <input id="submit" type="submit" value="登入">
+          <!--button type="submit">Continue</button-->
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+  <script src="Login.js"></script>
+  <div id="result"></div>
+
+
+</body>
+
+</html>

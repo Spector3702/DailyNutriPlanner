@@ -1,0 +1,279 @@
+/*字體*/
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  background-color: white;
+  display: flex;
+  align-items: stretch;
+}
+
+.font {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/*包住整個的*/
+.warp {
+  /*margin: 0 auto;*/
+  width: 1520px;
+  display: flex;
+  /*flex-direction: row;*/
+}
+
+/*最上面的區塊*/
+.box1 {
+  width: 100%
+    /*1520px*/
+  ;
+  height: 50px;
+  position: relative;
+  background-color: #CCCCFF;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+
+}
+
+/*home page文字*/
+#home {
+
+  left: 50px;
+  top: 20px;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+#home_icon {
+  width: 20px;
+  height: 20px;
+  left: 65px;
+  top: 15px;
+  position: relative;
+}
+
+/*login按鈕設定*/
+#login_icon {
+  width: 25px;
+  height: 25px;
+  left: 1270px;
+  top: 15px;
+  position: relative;
+}
+
+#login {
+  width: 75px;
+  height: 30px;
+  left: 1200px;
+  top: 25%;
+  position: relative;
+  text-align: center;
+  line-height: 30px;
+
+  border-radius: 10px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
+/*第二段*/
+.box2 {
+  width: 17%;
+  height: 700px;
+  left: 0px;
+  top: 50px;
+  position: absolute;
+  background-color: #BAA0F2;
+  /*background-image: url('img/pic4.jpg');
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+  background-color: whitesmoke;*/
+}
+
+
+/*包在box2的搜尋區塊*/
+.box3 {
+  width: 1000px;
+  height: 50px;
+  height: 300px;
+  left: 400px;
+  top: 250px;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #F1EEF9;
+  display: flex;
+  flex-direction: row;
+  /*border:  5px #996AEC solid;*/
+}
+
+#record_icon {
+  left: 330px;
+  top: 140px;
+  position: relative;
+}
+
+.start {
+  width: 400px;
+  left: 400px;
+  top: 10px;
+  position: relative;
+}
+
+/*包在box2的功能欄位區塊*/
+.choose_box {
+  width: 150px;
+  height: 300px;
+  left: 50px;
+  top: 100px;
+  border-radius: 10px;
+  position: absolute;
+  background-color: snow;
+  display: flex;
+  flex-direction: row;
+}
+
+#menu_img {
+  left: 20px;
+  top: 10px;
+  position: relative;
+
+}
+
+#menu_word {
+  left: 25px;
+  top: -10px;
+  position: relative;
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #996AEC;
+}
+
+/*查詢個人紀錄*/
+#record {
+  width: 80%;
+  height: 50px;
+  top: 30px;
+  text-align: center;
+  line-height: 50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
+/*查詢食物成分*/
+#food {
+  width: 80%;
+  height: 50px;
+  top: 92.5px;
+  text-align: center;
+  line-height: 50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
+/*查詢每人標準攝取量*/
+#standard {
+  width: 80%;
+  height: 50px;
+  top: 155px;
+  text-align: center;
+  line-height: 50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
+/*新增個人飲食紀錄*/
+#update {
+  width: 80%;
+  height: 50px;
+  top: 217.5px;
+  text-align: center;
+  line-height: 50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
+/*執行搜尋*/
+#go {
+  left: 700px;
+  top: 275px;
+  position: absolute;
+  background-color: #BAA0F2;
+  border: 3px black solid;
+}
+
+/*以下為選項*/
+.food {
+  left: 25px;
+  top: 190px;
+  position: relative;
+}
+
+#date_word {
+  left: 70px;
+  top: 50px;
+  position: relative;
+}
+
+#food_word {
+  left: -50px;
+  top: 180px;
+  position: relative;
+}
+
+::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+input[type="text"] {
+  width: 250px;
+  left: 150px;
+  height: 50px;
+  background-color: #BAA0F2;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+/*日期*/
+input[type="date"] {
+  width: 250px;
+  height: 50px;
+  left: 150px;
+  top: 40px;
+
+  box-sizing: border-box;
+  background-color: #BAA0F2;
+  padding: 15px;
+  position: relative;
+  transform: translate(-50%, -50%);
+  /*font-family: "Roboto Mono",monospace;*/
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
