@@ -12,6 +12,7 @@ var (
 	persnInfoRoute v1.PersnInfoRouter     = v1.NewPersnInfoRouter(model.NewPersnInfoModel())
 	foodstuffRoute v1.FoodstuffRouter     = v1.NewFoodstuffRouter(model.NewFoodstuffModel())
 	eveNutrisRoute v1.EverydayNutriRouter = v1.NewEverydayNutriRouter(model.NewEverydayNutriModel())
+	recordRoute    v1.RecordRouter        = *v1.NewRecordRouter()
 )
 
 func Routes(app *gin.Engine) {
@@ -20,4 +21,5 @@ func Routes(app *gin.Engine) {
 	persnInfoRoute.Setup(apiRoute)
 	foodstuffRoute.Setup(apiRoute)
 	eveNutrisRoute.Setup(apiRoute)
+	recordRoute.Setup(apiRoute)
 }

@@ -8,6 +8,7 @@ import (
 type FoodstuffModel interface {
 	GetByName(name string) (*entity.Foodstuff, error)
 	GetBySno(Sno string) (*entity.Foodstuff, error)
+	GetSnoByName(name string) (string, error)
 }
 
 type foodstuffModel struct {
@@ -34,4 +35,13 @@ func (f *foodstuffModel) GetBySno(Sno string) (*entity.Foodstuff, error) {
 		return nil, err
 	}
 	return foodstuff, nil
+}
+
+func (f *foodstuffModel) GetSnoByName(name string) (string, error) {
+	foodstuff := &entity.Foodstuff{}
+	err := loaders.DB.Where("name = ?", name).First(foodstuff).Error
+	if err != nil {
+		return "", err
+	}
+	return foodstuff.Sno, nil
 }
