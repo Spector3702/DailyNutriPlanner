@@ -32,7 +32,7 @@ func (r *foodstuffRouter) Setup(rg *gin.RouterGroup) {
 
 // get foodstuff based on name from front-end
 func (r *foodstuffRouter) GetFoodstuffByName(c *gin.Context) {
-	name := c.Param("name")
+	name := c.Query("name")
 
 	foodstuff, err := r.model.GetByName(name)
 
