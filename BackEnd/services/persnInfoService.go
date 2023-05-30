@@ -17,7 +17,7 @@ type persnInfoService struct {
 }
 
 // create new tuple by given info
-func (s *persnInfoService) CreateByInfo(email, gender, age, weightStr, heightStr, workload string) (*entity.PersonalInfo, error) {
+func (s *persnInfoService) CreateByInfo(email, gender, age, weightStr, heightStr, work_load string) (*entity.PersonalInfo, error) {
 	// Convert weight and height strings to float64
 	weight, err := strconv.ParseFloat(weightStr, 64)
 	if err != nil {
@@ -30,12 +30,12 @@ func (s *persnInfoService) CreateByInfo(email, gender, age, weightStr, heightStr
 	}
 
 	persnInfo := &entity.PersonalInfo{
-		Email:    email,
-		Gender:   gender,
-		Age:      age,
-		Weight:   weight,
-		Height:   height,
-		WorkLoad: workload,
+		Email:     email,
+		Gender:    gender,
+		Age:       age,
+		Weight:    weight,
+		Height:    height,
+		Work_load: work_load,
 	}
 
 	err = s.m.CreatePersnInfo(persnInfo)
@@ -46,7 +46,7 @@ func (s *persnInfoService) CreateByInfo(email, gender, age, weightStr, heightStr
 	return persnInfo, nil
 }
 
-func (s *persnInfoService) UpdateByInfo(email, gender, age, weightStr, heightStr, workload string) (*entity.PersonalInfo, error) {
+func (s *persnInfoService) UpdateByInfo(email, gender, age, weightStr, heightStr, work_load string) (*entity.PersonalInfo, error) {
 	// Convert weight and height strings to float64
 	weight, err := strconv.ParseFloat(weightStr, 64)
 	if err != nil {
@@ -59,12 +59,12 @@ func (s *persnInfoService) UpdateByInfo(email, gender, age, weightStr, heightStr
 	}
 
 	persnInfo := &entity.PersonalInfo{
-		Email:    email,
-		Gender:   gender,
-		Age:      age,
-		Weight:   weight,
-		Height:   height,
-		WorkLoad: workload,
+		Email:     email,
+		Gender:    gender,
+		Age:       age,
+		Weight:    weight,
+		Height:    height,
+		Work_load: work_load,
 	}
 
 	err = s.m.UpdatePersnInfo(persnInfo)

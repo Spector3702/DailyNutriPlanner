@@ -38,9 +38,9 @@ func (r *persnInfoRouter) RegisNewInfo(c *gin.Context) {
 	age := c.PostForm("age")
 	weightStr := c.PostForm("weight")
 	heightStr := c.PostForm("height")
-	workload := c.PostForm("workload")
+	work_load := c.PostForm("work_load")
 
-	persnInfo, err := service.PersnInfoService.CreateByInfo(email, gender, age, weightStr, heightStr, workload)
+	persnInfo, err := service.PersnInfoService.CreateByInfo(email, gender, age, weightStr, heightStr, work_load)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "create fail"})
 		return
@@ -61,12 +61,12 @@ func (r *persnInfoRouter) LoginByEmail(c *gin.Context) {
 	}
 
 	c.IndentedJSON(http.StatusOK, gin.H{
-		"Email":    persnInfo.Email,
-		"Gender":   persnInfo.Gender,
-		"Age":      persnInfo.Age,
-		"Weight":   persnInfo.Weight,
-		"Height":   persnInfo.Height,
-		"WorkLoad": persnInfo.WorkLoad,
+		"Email":     persnInfo.Email,
+		"Gender":    persnInfo.Gender,
+		"Age":       persnInfo.Age,
+		"Weight":    persnInfo.Weight,
+		"Height":    persnInfo.Height,
+		"Work_load": persnInfo.Work_load,
 	})
 }
 
@@ -77,9 +77,9 @@ func (r *persnInfoRouter) UpdateByAllInfo(c *gin.Context) {
 	age := c.PostForm("age")
 	weightStr := c.PostForm("weight")
 	heightStr := c.PostForm("height")
-	workload := c.PostForm("workload")
+	work_load := c.PostForm("work_load")
 
-	persnInfo, err := service.PersnInfoService.UpdateByInfo(email, gender, age, weightStr, heightStr, workload)
+	persnInfo, err := service.PersnInfoService.UpdateByInfo(email, gender, age, weightStr, heightStr, work_load)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "update fail"})
 		return
