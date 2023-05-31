@@ -24,7 +24,7 @@ func NewRecordRouter() *RecordRouter {
 }
 
 func (r *RecordRouter) CreateRecord(c *gin.Context) {
-	email := c.Query("email")
+	email := c.PostForm("email")
 	name := c.PostForm("name")
 	sno, err := r.f.GetSnoByName(name)
 	if err != nil {
