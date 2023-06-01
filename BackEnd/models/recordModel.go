@@ -9,7 +9,7 @@ import (
 
 type RecordModel interface {
 	CreateRecord(record *entity.Record) (err error)
-	GetRecordsByDate(date time.Time) ([]*entity.Record, error)
+	GetRecordsByDateAndEmail(date time.Time, email string) ([]*entity.Record, error)
 }
 
 type recordModel struct {
@@ -31,9 +31,9 @@ func (r *recordModel) CreateRecord(record *entity.Record) (err error) {
 
 	return
 }
-func (r *recordModel) GetRecordsByDate(date time.Time) ([]*entity.Record, error) {
+func (r *recordModel) GetRecordsByDateAndEmail(date time.Time, email string) ([]*entity.Record, error) {
 	var records []*entity.Record
-	result := loaders.DB.Debug().Where("date >= ? AND date < ?", date.Format("2006-01-02"), date.Add(24*time.Hour).Format("2006-01-02")).Find(&records)
+	result := loaders.DB.Debug().Where("date >= ? AND date < ? AND email = ?", date.Format("2006-01-02"), date.Add(24*time.Hour).Format("2006-01-02"), email).Find(&records)
 	if result.Error != nil {
 		return nil, result.Error
 	}
