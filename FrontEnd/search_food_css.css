@@ -51,16 +51,8 @@ body {
   position: relative;
 }
 
-/*login按鈕設定*/
-#login_icon {
-  width: 25px;
-  height: 25px;
-  left: 1270px;
-  top: 15px;
-  position: relative;
-}
-
-#login {
+/*revise按鈕設定*/
+#revise {
   width: 75px;
   height: 30px;
   left: 1200px;
@@ -162,11 +154,26 @@ background-color: whitesmoke;*/
   text-decoration: none;
 }
 
+/*新增個人飲食紀錄*/
+#update {
+  width: 80%;
+  height: 50px;
+  top: 92.5px;
+  text-align: center;
+  line-height: 50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
 /*查詢食物成分*/
 #food {
   width: 80%;
   height: 50px;
-  top: 92.5px;
+  top: 155px;
   text-align: center;
   line-height: 50px;
   margin: 12.5px 12.5px;
@@ -181,7 +188,7 @@ background-color: whitesmoke;*/
 #standard {
   width: 80%;
   height: 50px;
-  top: 155px;
+  top: 217.5px;
   text-align: center;
   line-height: 50px;
   margin: 12.5px 12.5px;
@@ -192,11 +199,11 @@ background-color: whitesmoke;*/
   text-decoration: none;
 }
 
-/*新增個人飲食紀錄*/
-#update {
+/*查詢每人bmi所需熱量*/
+#bmi_count {
   width: 80%;
   height: 50px;
-  top: 217.5px;
+  top: 280px;
   text-align: center;
   line-height: 50px;
   margin: 12.5px 12.5px;

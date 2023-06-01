@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    var isLoggedIn = sessionStorage.getItem('isLogged');
 
     if (isLoggedIn) {
         console.log(responseData);

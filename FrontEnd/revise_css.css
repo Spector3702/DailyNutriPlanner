@@ -225,21 +225,75 @@ body {
 }
 
 /*以下為選項*/
-.food {
-    left: 25px;
-    top: 190px;
+.email {
+    left: 0px;
+    top: 30px;
     position: relative;
 }
 
-#date_word {
+#gender {
+    left: 0px;
+    top: 60px;
+    position: relative;
+}
+
+#age {
+    left: 0px;
+    top: 100px;
+    position: relative;
+}
+
+#height {
+    left: 430px;
+    top: -280px;
+    position: relative;
+}
+
+#weight {
+    left: 430px;
+    top: -250px;
+    position: relative;
+}
+
+#workload {
+    left: 470px;
+    top: -225px;
+    position: relative;
+}
+
+#email_word {
     left: 70px;
-    top: 50px;
+    top: 25px;
     position: relative;
 }
 
-#food_word {
-    left: -50px;
-    top: 180px;
+#gender_word {
+    left: -12px;
+    top: 100px;
+    position: relative;
+}
+
+#age_word {
+    left: -83px;
+    top: 185px;
+    position: relative;
+}
+
+#height_word {
+    left: 330px;
+    top: -115px;
+    position: relative;
+}
+
+#weight_word {
+    left: 330px;
+    top: -85px;
+    position: relative;
+}
+
+#workload_word {
+    left: 330px;
+    top: -55px;
     position: relative;
 }
 

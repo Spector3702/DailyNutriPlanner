@@ -1,0 +1,113 @@
+<!--主頁面-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康營養紀錄表</title>
+    <link rel="stylesheet" href="revise_css.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600" rel="stylesheet">
+
+    <!--設定按鈕圖案-->
+    <style>
+        input[type=button],
+        input[type=submit],
+        input[type=reset] {
+            background-color: black;
+            width: 250px;
+            border: none;
+            border-radius: 10px;
+            color: mintcream;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<!--=========================分隔線-=========================-->
+
+<body>
+    <div class="warp">
+        <!--最上面小的區塊-->
+        <div class="box1">
+            <img id="home_icon" src="img/home.png">
+            <a id="revise" href="revise.html">Revise</a>
+            <a id="home" href="MainPage.html">Home page</a>
+            <!--h5 class="home" >Home page</h5-->
+        </div>
+        <!--下面的區塊-->
+        <div class="box2">
+            <!--左邊選擇功能的區塊-->
+            <div class="choose_box">
+                <img id="menu_img" src="img/menu.png" width="20" height="20">
+                <h3 id="menu_word">功能選擇</h3>
+                <a id="record" href="search_record.html">查詢個人紀錄</a>
+                <a id="update" href="MainPage.html">新增飲食紀錄</a>
+                <a id="food" href="search_food.html">查詢食物成分</a>
+                <a id="standard" href="search_standard.html">查詢標準攝取量</a>
+                <a id="bmi_count" href="bmi_count.html">查詢所需熱量</a>
+
+            </div>
+            <!--文字說明-->
+            <div class="start">
+                <img id="record_icon" src="img/record.png" width="80" height="80">
+                <h1>開始你今天的</h1>
+                <h1>DailyNutriPlanner吧!</h1>
+            </div>
+            <!--搜尋的區塊-->
+            <div class="box3">
+                <h2 id="email_word">● email</h2>
+                <h2 id="gender_word">● 性別</h2>
+                <h2 id="age_word">● 年齡</h2>
+
+                <form id="Reviseform">
+
+                    <div class="email">
+                        <!--label for="food" class="ha-screen-reader">食物</label-->
+                        <input id="email_bar" type="text" class="field__input"
+                            placeholder=" ex : jeffery2002945@gmail.com">
+                    </div>
+                    <h5><select id="gender" required>
+                            <option value="male">男性</option>
+                            <option value="female">女性</option>
+                        </select>
+                    </h5>
+                    <h5><select id="age" required>
+                            <option value="1-6">1-6</option>
+                            <option value="7-12">7-12</option>
+                            <option value="13-15">13-15</option>
+                            <option value="16-18">16-18</option>
+                            <option value="19-44">19-44</option>
+                            <option value="45-64">45-64</option>
+                            <option value="65-74">65-74</option>
+                            <option value="75up">75+</option>
+                        </select>
+                    </h5>
+                    <h2 id="height_word">● 身高</h2>
+                    <h2 id="weight_word">● 體重</h2>
+                    <h2 id="workload_word">● 工作量</h2>
+
+                    <input type="text" id="height" placeholder=" e.g. 172" required>
+                    <br>
+
+                    <input type="text" id="weight" placeholder=" e.g. 56" required>
+                    <br>
+
+                    <h5><select id="workload" required>
+                            <option value="high">高</option>
+                            <option value="medium">中</option>
+                            <option value="low">低</option>
+                        </select>
+                    </h5>
+                    <input id="go" type="submit" value="修改">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--對應的JS檔案-->
+    <script src="revise.js"></script>
+</body>
+
+</html>

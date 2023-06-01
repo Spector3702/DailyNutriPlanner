@@ -22,6 +22,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 return response.json().then(responseData => {
                     localStorage.setItem('responseData', JSON.stringify(responseData));
                     sessionStorage.setItem('isLogged', true);
+                    // console.log(localStorage.getItem("responseData"))
                     window.location.href = "MainPage.html";
                 });
             } else {

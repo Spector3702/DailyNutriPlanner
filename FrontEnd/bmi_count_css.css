@@ -51,7 +51,7 @@ body {
     position: relative;
 }
 
-/*revise按鈕設定*/
+/*login按鈕設定*/
 
 #revise {
     width: 75px;
@@ -77,9 +77,9 @@ body {
     position: absolute;
     background-color: #BAA0F2;
     /*background-image: url('img/pic4.jpg');
-    background-size: 100% 90%;
-    background-repeat: no-repeat;
-    background-color: whitesmoke;*/
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+  background-color: whitesmoke;*/
 }
 
 
@@ -216,9 +216,9 @@ body {
 }
 
 /*執行搜尋*/
-#go {
-    left: 700px;
-    top: 275px;
+#submit {
+    left: 70px;
+    top: 40px;
     position: absolute;
     background-color: #BAA0F2;
     border: 3px black solid;
@@ -226,20 +226,14 @@ body {
 
 /*以下為選項*/
 .food {
-    left: 25px;
-    top: 190px;
-    position: relative;
-}
-
-#date_word {
-    left: 70px;
-    top: 50px;
+    left: 150px;
+    top: 25px;
     position: relative;
 }
 
 #food_word {
-    left: -50px;
-    top: 180px;
+    left: 60px;
+    top: 15px;
     position: relative;
 }
 
@@ -258,6 +252,7 @@ input[type="text"] {
     border: none;
     outline: none;
 }
+
 
 /*日期*/
 input[type="date"] {

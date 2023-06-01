@@ -1,0 +1,70 @@
+<!--主頁面-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康營養紀錄表</title>
+    <link rel="stylesheet" href="bmi_count_css.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600" rel="stylesheet">
+
+    <!--設定按鈕圖案-->
+    <style>
+        input[type=button],
+        input[type=submit],
+        input[type=reset] {
+            background-color: black;
+            width: 250px;
+            border: none;
+            border-radius: 10px;
+            color: mintcream;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<!--=========================分隔線-=========================-->
+
+<body>
+    <div class="warp">
+        <!--最上面小的區塊-->
+        <div class="box1">
+            <img id="home_icon" src="img/home.png">
+            <a id="revise" href="revise.html">Revise</a>
+            <a id="home" href="MainPage.html">Home page</a>
+            <!--h5 class="home" >Home page</h5-->
+        </div>
+        <!--下面的區塊-->
+        <div class="box2">
+            <!--左邊選擇功能的區塊-->
+            <div class="choose_box">
+                <img id="menu_img" src="img/menu.png" width="20" height="20">
+                <h3 id="menu_word">功能選擇</h3>
+                <a id="record" href="search_record.html">查詢個人紀錄</a>
+                <a id="update" href="MainPage.html">新增飲食紀錄</a>
+                <a id="food" href="search_food.html">查詢食物成分</a>
+                <a id="standard" href="search_standard.html">查詢標準攝取量</a>
+                <a id="bmi_count" href="bmi_count.html">查詢所需熱量</a>
+            </div>
+            <!--文字說明-->
+            <div class="start">
+                <img id="record_icon" src="img/record.png" width="80" height="80">
+                <h1>開始你今天的</h1>
+                <h1>DailyNutriPlanner吧!</h1>
+            </div>
+            <!--搜尋的區塊-->
+            <div class="box3">
+                <form id="bmi_count_form">
+                    <input id="submit" type="submit" value="開始吧!">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--對應的JS檔案-->
+    <script src="bmi_count.js"></script>
+</body>
+
+</html>

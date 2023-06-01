@@ -20,6 +20,10 @@ func main() {
 	loaders.Init()
 
 	server := gin.Default()
+
+	// 使用中间件设置CORS头
+	server.Use(corsMiddleware())
+
 	r.Routes(server)
 
 	server.GET("/", func(c *gin.Context) {
@@ -27,4 +31,21 @@ func main() {
 	})
 
 	server.Run(":8080")
+}
+
+// 定义CORS中间件
+func corsMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin, Content-Type, Authorization")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+
+		c.Next()
+	}
 }
