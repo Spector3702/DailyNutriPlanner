@@ -9,6 +9,7 @@
 /*左欄位*/
 .box1 {
   width: 60%;
+  height: 100%;
   line-height: 15px;
   /*margin:50px;*/
   padding: 50px;
@@ -53,7 +54,7 @@
 .project_name {
   position: relative;
   color: white;
-  left: 100px;
+  left: 180px;
   top: 210px;
 }
 

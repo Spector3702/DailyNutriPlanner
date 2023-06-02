@@ -51,8 +51,7 @@ body {
     position: relative;
 }
 
-/*login按鈕設定*/
-
+/*revise按鈕設定*/
 #revise {
     width: 75px;
     height: 30px;
@@ -93,8 +92,8 @@ body {
     border-radius: 10px;
     position: absolute;
     background-color: #F1EEF9;
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
     /*border:  5px #996AEC solid;*/
 }
 
@@ -195,7 +194,7 @@ body {
     margin: 12.5px 12.5px;
     position: absolute;
     border-radius: 50px;
-    background-color: #996AEC;
+    background-color: #000000;
     color: mintcream;
     text-decoration: none;
 }
@@ -225,7 +224,7 @@ body {
     margin: 12.5px 12.5px;
     position: absolute;
     border-radius: 50px;
-    background-color: #000000;
+    background-color: #996AEC;
     color: mintcream;
     text-decoration: none;
 }
@@ -244,14 +243,6 @@ body {
     text-decoration: none;
 }
 
-#search_word {
-    left: 25px;
-    top: 10px;
-    position: relative;
-    font-family: 'Josefin Sans', sans-serif;
-    color: #996AEC;
-}
-
 /*執行搜尋*/
 #submit {
     left: 700px;
@@ -260,6 +251,55 @@ body {
     background-color: #BAA0F2;
     color: #000000;
     border: 3px black solid;
+
+}
+
+#search_word {
+    left: 25px;
+    top: 10px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #996AEC;
+}
+
+#food_bar {
+    left: 175px;
+    top: 15px;
+    position: relative;
+}
+
+/*選擇食物*/
+#food_word {
+    left: 25px;
+    top: 50px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #996AEC;
+}
+
+#select_food {
+    left: 100px;
+    top: 50px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #BAA0F2;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    color: mintcream;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/*golang資料*/
+#dataContainer {
+    left: 600px;
+    top: -120px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    /*color: #996AEC;*/
 }
 
 /*以下為選項*/
@@ -270,8 +310,8 @@ body {
 }
 
 #food_word {
-    left: 60px;
-    top: 15px;
+    left: 25px;
+    top: 50px;
     position: relative;
 }
 
@@ -283,33 +323,12 @@ body {
 input[type="text"] {
     width: 250px;
     left: 150px;
-    height: 50px;
+    height: 30px;
     background-color: #BAA0F2;
     border-radius: 5px;
     font-size: 18px;
     border: none;
     outline: none;
-}
-
-
-/*日期*/
-input[type="date"] {
-    width: 250px;
-    height: 50px;
-    left: 150px;
-    top: 40px;
-
-    box-sizing: border-box;
-    background-color: #BAA0F2;
-    padding: 15px;
-    position: relative;
-    transform: translate(-50%, -50%);
-    /*font-family: "Roboto Mono",monospace;*/
-    color: #ffffff;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -317,12 +336,4 @@ input[type="date"] {
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
-}
-
-#dataContainer{
-    left: -50px;
-    top: 80px;
-    position: relative;
-    font-family: 'Josefin Sans', sans-serif;
-    color: #996AEC;
 }

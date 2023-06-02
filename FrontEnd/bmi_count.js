@@ -26,6 +26,13 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 // 登入成功
                 return response.json().then(responseData => {
                     console.log(responseData)
+                    var dataContainer = document.getElementById('dataContainer');
+                    //dataContainer.textContent = JSON.stringify(data);
+                    var cal = JSON.stringify(responseData.calory);
+                    dataContainer.innerHTML = "";
+
+                    //dataContainer.innerHTML = age + select_value+"<br>";
+                    dataContainer.innerHTML = "查詢結果 :<br>根據你的身高與體重算出的BMI,你的建議攝取量是<br>"+ cal + "(cal)唷<br>";
                 });
             } else {
                 // 登入失敗，跳轉到註冊頁面

@@ -3,7 +3,7 @@ package entity
 type Foodstuff struct {
 	Sno          string `gorm:"primaryKey;size:8" json:"sno"`
 	Name         string `gorm:"uniqueIndex" json:"name"`
-	Other_name   string `gorm:"column:Other_name" json:"other_name"`
+	Other_name   string `gorm:"column:Other_name;size:60" json:"other_name"`
 	English_name string `gorm:"column:English_name" json:"english_name"`
 	Describe     string `json:"describe"`
 }

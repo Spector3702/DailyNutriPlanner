@@ -51,22 +51,6 @@ body {
     position: relative;
 }
 
-/*login按鈕設定*/
-
-#revise {
-    width: 75px;
-    height: 30px;
-    left: 1200px;
-    top: 25%;
-    position: relative;
-    text-align: center;
-    line-height: 30px;
-
-    border-radius: 10px;
-    background-color: #996AEC;
-    color: mintcream;
-    text-decoration: none;
-}
 
 /*第二段*/
 .box2 {
@@ -93,8 +77,8 @@ body {
     border-radius: 10px;
     position: absolute;
     background-color: #F1EEF9;
-    display: flex;
-    flex-direction: row;
+    /*display: flex;
+  flex-direction: row;*/
     /*border:  5px #996AEC solid;*/
 }
 
@@ -138,6 +122,23 @@ body {
     font-size: 18px;
     font-family: 'Josefin Sans', sans-serif;
     color: #996AEC;
+}
+
+/*revise按鈕設定*/
+
+#revise {
+    width: 75px;
+    height: 30px;
+    left: 1200px;
+    top: 25%;
+    position: relative;
+    text-align: center;
+    line-height: 30px;
+
+    border-radius: 10px;
+    background-color: #996AEC;
+    color: mintcream;
+    text-decoration: none;
 }
 
 /*查詢個人紀錄*/
@@ -225,7 +226,7 @@ body {
     margin: 12.5px 12.5px;
     position: absolute;
     border-radius: 50px;
-    background-color: #000000;
+    background-color: #996AEC;
     color: mintcream;
     text-decoration: none;
 }
@@ -239,9 +240,75 @@ body {
     margin: 12.5px 12.5px;
     position: absolute;
     border-radius: 50px;
-    background-color: #996AEC;
+    background-color: #000000;
     color: mintcream;
     text-decoration: none;
+}
+
+#nutri_word {
+    left: 25px;
+    top: 50px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #996AEC;
+}
+
+#select_nutri {
+    left: 100px;
+    top: 50px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #BAA0F2;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    color: mintcream;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#amount_word {
+    left: 25px;
+    top: 75px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #996AEC;
+}
+
+#select_amount {
+    left: 113px;
+    top: 80px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #BAA0F2;
+    width: 170px;
+    border: none;
+    border-radius: 10px;
+    color: mintcream;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/*執行搜尋按鈕*/
+#submit {
+    left: 700px;
+    top: 275px;
+    position: absolute;
+
+    background-color: #BAA0F2;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    color: #000000;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 3px black solid;
 }
 
 #search_word {
@@ -252,64 +319,29 @@ body {
     color: #996AEC;
 }
 
-/*執行搜尋*/
-#submit {
-    left: 700px;
-    top: 275px;
-    position: absolute;
-    background-color: #BAA0F2;
-    color: #000000;
-    border: 3px black solid;
-}
-
-/*以下為選項*/
-.food {
-    left: 150px;
-    top: 25px;
+/*查詢的結果*/
+#dataContainer {
+    left: 500px;
+    top: -175px;
     position: relative;
 }
 
-#food_word {
-    left: 60px;
-    top: 15px;
-    position: relative;
-}
 
+/*日期*/
 ::placeholder {
     color: #ffffff;
     opacity: 1;
 }
 
 input[type="text"] {
-    width: 250px;
+    width: 170px;
     left: 150px;
-    height: 50px;
+    height: 20px;
     background-color: #BAA0F2;
     border-radius: 5px;
     font-size: 18px;
     border: none;
     outline: none;
-}
-
-
-/*日期*/
-input[type="date"] {
-    width: 250px;
-    height: 50px;
-    left: 150px;
-    top: 40px;
-
-    box-sizing: border-box;
-    background-color: #BAA0F2;
-    padding: 15px;
-    position: relative;
-    transform: translate(-50%, -50%);
-    /*font-family: "Roboto Mono",monospace;*/
-    color: #ffffff;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -319,10 +351,11 @@ input[type="date"] {
     border-radius: 3px;
 }
 
-#dataContainer{
-    left: -50px;
-    top: 80px;
+#dataContainer {
+    left: 600px;
+    top: -150px;
     position: relative;
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
     color: #996AEC;
-}
+  }

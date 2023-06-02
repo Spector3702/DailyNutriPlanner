@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>健康營養紀錄表</title>
-  <link rel="stylesheet" href="search_food_css.css">
+  <link rel="stylesheet" href="search_food_ingredient_css.css">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600" rel="stylesheet">
 
   <!--設定按鈕圖案-->
@@ -44,10 +44,12 @@
         <img id="menu_img" src="img/menu.png" width="20" height="20">
         <h3 id="menu_word">功能選擇</h3>
         <a id="record" href="search_record.html">查詢個人紀錄</a>
-        <a id="update" href="MainPage.html">新增飲食紀錄</a>
-        <a id="food" href="search_food.html">查詢食物成分</a>
+        <a id="create" href="MainPage.html">新增個人紀錄</a>
+        <a id="food_ingredient" href="search_food_ingredient.html">查詢食物成分</a>
+        <a id="food_nutri" href="search_food_nutri.html">查詢食物營養素</a>
         <a id="standard" href="search_standard.html">查詢標準攝取量</a>
         <a id="bmi_count" href="bmi_count.html">查詢所需熱量</a>
+        <a id="rec_food" href="recommand_food.html">查詢建議食物</a>
 
       </div>
       <!--文字說明-->
@@ -58,20 +60,23 @@
       </div>
       <!--搜尋的區塊-->
       <div class="box3">
-        <h2 id="food_word">● 你吃了什麼呢</h2>
-        <form id="search_food_form">
-          <!--食物-->
-          <div class="food">
-            <!--label for="food" class="ha-screen-reader">食物</label-->
-            <input id="food_bar" type="text" class="field__input" placeholder="  ex : 水果">
-          </div>
-          <input id="submit" type="submit" value="go →">
-        </form>
+        <h3 id="search_word">查詢食物成分</h3>
+
+        <form>
+          <label id="food_word" for="food">請輸入你吃了什麼</label>
+          <input id="select_food" type="text" class="" field_input placeholder="  ex : 水果">
+          <br>
+
+          <!--按鈕-->
+          <input id="submit" type="submit" value="查詢食物成分">
+
+          <!--golang資料-->
+          <div id="dataContainer"></div>
       </div>
     </div>
   </div>
   <!--對應的JS檔案-->
-  <script src="search_food.js"></script>
+  <script src="search_food_ingredient.js"></script>
 </body>
 
 </html>

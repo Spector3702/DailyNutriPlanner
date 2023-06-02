@@ -44,10 +44,12 @@
         <img id="menu_img" src="img/menu.png" width="20" height="20">
         <h3 id="menu_word">功能選擇</h3>
         <a id="record" href="search_record.html">查詢個人紀錄</a>
-        <a id="update" href="MainPage.html">新增飲食紀錄</a>
-        <a id="food" href="search_food.html">查詢食物成分</a>
+        <a id="create" href="MainPage.html">新增個人紀錄</a>
+        <a id="food_ingredient" href="search_food_ingredient.html">查詢食物成分</a>
+        <a id="food_nutri" href="search_food_nutri.html">查詢食物營養素</a>
         <a id="standard" href="search_standard.html">查詢標準攝取量</a>
         <a id="bmi_count" href="bmi_count.html">查詢所需熱量</a>
+        <a id="rec_food" href="recommand_food.html">查詢建議食物</a>
 
       </div>
       <!--文字說明-->
@@ -58,30 +60,22 @@
       </div>
       <!--搜尋的區塊-->
       <div class="box3">
-        <h2 id="date_word">● 選擇日期</h2>
-        <h2 id="food_word">● 你吃了什麼呢</h2>
-        <form action="test.php" method="post">
-          <!--尚未編輯細項-->
-          <!--先簡略放幾個而已-->
-
+        <h3 id="search_word">新增飲食紀錄</h3>
+        <h4 id="food_word">新增食物:</h4>
+        <form id="createform">
           <!--食物-->
-          <div class="food">
-            <!--label for="food" class="ha-screen-reader">食物</label-->
-            <input id="food_bar" type="text" class="field__input" placeholder="  ex : 水果">
-          </div>
+          <!--label for="food" class="ha-screen-reader">食物</label-->
 
-          <!--日期-->
-          <div class="date">
-            <input type="date" name="date" value="2023-01-01" min="2023-01-01" max="2023-12-31">
-          </div>
+          <input id="food_bar" type="text" class="field__input" placeholder="  ex : 水果">
 
-          <input id="go" type="submit" value="go →" onclick="location.href='query.html'">
+          <input id="submit" type="submit" value="新增飲食紀錄">
         </form>
+        <div id="dataContainer"></div>
       </div>
     </div>
   </div>
   <!--對應的JS檔案-->
-  <!-- <script src="Main.js"></script> -->
+  <script src="Main.js"></script>
 </body>
 
 </html>

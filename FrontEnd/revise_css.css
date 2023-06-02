@@ -14,7 +14,7 @@ body {
 /*包住整個的*/
 .warp {
     /*margin: 0 auto;*/
-    width: 1520px;
+    width: 100%;
     display: flex;
     /*flex-direction: row;*/
 }
@@ -63,7 +63,7 @@ body {
     line-height: 30px;
 
     border-radius: 10px;
-    background-color: #996AEC;
+    background-color: #000000;
     color: mintcream;
     text-decoration: none;
 }
@@ -71,7 +71,7 @@ body {
 /*第二段*/
 .box2 {
     width: 17%;
-    height: 700px;
+    height: 100%;
     left: 0px;
     top: 50px;
     position: absolute;
@@ -114,7 +114,7 @@ body {
 /*包在box2的功能欄位區塊*/
 .choose_box {
     width: 150px;
-    height: 300px;
+    height: 500px;
     left: 50px;
     top: 100px;
     border-radius: 10px;
@@ -155,8 +155,8 @@ body {
     text-decoration: none;
 }
 
-/*新增個人飲食紀錄*/
-#update {
+/*查詢個人紀錄*/
+#create {
     width: 80%;
     height: 50px;
     top: 92.5px;
@@ -171,10 +171,25 @@ body {
 }
 
 /*查詢食物成分*/
-#food {
+#food_ingredient {
     width: 80%;
     height: 50px;
     top: 155px;
+    text-align: center;
+    line-height: 50px;
+    margin: 12.5px 12.5px;
+    position: absolute;
+    border-radius: 50px;
+    background-color: #996AEC;
+    color: mintcream;
+    text-decoration: none;
+}
+
+/*查詢食物營養素*/
+#food_nutri {
+    width: 80%;
+    height: 50px;
+    top: 217.5px;
     text-align: center;
     line-height: 50px;
     margin: 12.5px 12.5px;
@@ -189,7 +204,7 @@ body {
 #standard {
     width: 80%;
     height: 50px;
-    top: 217.5px;
+    top: 280px;
     text-align: center;
     line-height: 50px;
     margin: 12.5px 12.5px;
@@ -204,7 +219,21 @@ body {
 #bmi_count {
     width: 80%;
     height: 50px;
-    top: 280px;
+    top: 342.5px;
+    text-align: center;
+    line-height: 50px;
+    margin: 12.5px 12.5px;
+    position: absolute;
+    border-radius: 50px;
+    background-color: #996AEC;
+    color: mintcream;
+    text-decoration: none;
+}
+
+#rec_food {
+    width: 80%;
+    height: 50px;
+    top: 405px;
     text-align: center;
     line-height: 50px;
     margin: 12.5px 12.5px;
@@ -216,11 +245,12 @@ body {
 }
 
 /*執行搜尋*/
-#go {
+#submit {
     left: 700px;
     top: 275px;
     position: absolute;
     background-color: #BAA0F2;
+    color: #000000;
     border: 3px black solid;
 }
 
@@ -232,33 +262,63 @@ body {
 }
 
 #gender {
-    left: 0px;
-    top: 60px;
+    left: -3px;
+    top: 39px;
     position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #BAA0F2;
+    width: 257px;
+    border: none;
+    border-radius: 10px;
+    color: mintcream;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 #age {
-    left: 0px;
-    top: 100px;
+    left: -3px;
+    top: 44px;
     position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #BAA0F2;
+    width: 257px;
+    border: none;
+    border-radius: 10px;
+    color: mintcream;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 #height {
     left: 430px;
-    top: -280px;
+    top: -345px;
     position: relative;
 }
 
 #weight {
     left: 430px;
-    top: -250px;
+    top: -320px;
     position: relative;
 }
 
 #workload {
     left: 470px;
-    top: -225px;
+    top: -320px;
     position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #BAA0F2;
+    width: 213px;
+    border: none;
+    border-radius: 10px;
+    color: mintcream;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 #email_word {
@@ -281,19 +341,19 @@ body {
 
 #height_word {
     left: 330px;
-    top: -115px;
+    top: -180px;
     position: relative;
 }
 
 #weight_word {
     left: 330px;
-    top: -85px;
+    top: -157px;
     position: relative;
 }
 
 #workload_word {
     left: 330px;
-    top: -55px;
+    top: -130px;
     position: relative;
 }
 

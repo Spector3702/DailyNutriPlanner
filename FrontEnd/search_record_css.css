@@ -14,7 +14,7 @@ body {
 /*包住整個的*/
 .warp {
     /*margin: 0 auto;*/
-    width: 1520px;
+    width: 100%;
     display: flex;
     /*flex-direction: row;*/
 }
@@ -71,7 +71,7 @@ body {
 /*第二段*/
 .box2 {
     width: 17%;
-    height: 700px;
+    height: 100%;
     left: 0px;
     top: 50px;
     position: absolute;
@@ -93,8 +93,8 @@ body {
     border-radius: 10px;
     position: absolute;
     background-color: #F1EEF9;
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
     /*border:  5px #996AEC solid;*/
 }
 
@@ -114,7 +114,7 @@ body {
 /*包在box2的功能欄位區塊*/
 .choose_box {
     width: 150px;
-    height: 300px;
+    height: 500px;
     left: 50px;
     top: 100px;
     border-radius: 10px;
@@ -150,13 +150,13 @@ body {
     margin: 12.5px 12.5px;
     position: absolute;
     border-radius: 50px;
-    background-color: #996AEC;
+    background-color: #000000;
     color: mintcream;
     text-decoration: none;
 }
 
-/*新增個人飲食紀錄*/
-#update {
+/*查詢個人紀錄*/
+#create {
     width: 80%;
     height: 50px;
     top: 92.5px;
@@ -171,10 +171,25 @@ body {
 }
 
 /*查詢食物成分*/
-#food {
+#food_ingredient {
     width: 80%;
     height: 50px;
     top: 155px;
+    text-align: center;
+    line-height: 50px;
+    margin: 12.5px 12.5px;
+    position: absolute;
+    border-radius: 50px;
+    background-color: #996AEC;
+    color: mintcream;
+    text-decoration: none;
+}
+
+/*查詢食物營養素*/
+#food_nutri {
+    width: 80%;
+    height: 50px;
+    top: 217.5px;
     text-align: center;
     line-height: 50px;
     margin: 12.5px 12.5px;
@@ -189,7 +204,7 @@ body {
 #standard {
     width: 80%;
     height: 50px;
-    top: 217.5px;
+    top: 280px;
     text-align: center;
     line-height: 50px;
     margin: 12.5px 12.5px;
@@ -204,7 +219,21 @@ body {
 #bmi_count {
     width: 80%;
     height: 50px;
-    top: 280px;
+    top: 342.5px;
+    text-align: center;
+    line-height: 50px;
+    margin: 12.5px 12.5px;
+    position: absolute;
+    border-radius: 50px;
+    background-color: #996AEC;
+    color: mintcream;
+    text-decoration: none;
+}
+
+#rec_food {
+    width: 80%;
+    height: 50px;
+    top: 405px;
     text-align: center;
     line-height: 50px;
     margin: 12.5px 12.5px;
@@ -216,12 +245,29 @@ body {
 }
 
 /*執行搜尋*/
-#go {
+#submit {
     left: 700px;
     top: 275px;
     position: absolute;
     background-color: #BAA0F2;
+    color: #000000;
     border: 3px black solid;
+}
+
+#search_word {
+    left: 25px;
+    top: 10px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #996AEC;
+}
+
+#date_word {
+    left: 25px;
+    top: 70px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #996AEC;
 }
 
 /*以下為選項*/
@@ -231,39 +277,19 @@ body {
     position: relative;
 }
 
-#date_word {
-    left: 70px;
-    top: 50px;
-    position: relative;
-}
 
-#food_word {
-    left: -50px;
-    top: 180px;
-    position: relative;
-}
 
 ::placeholder {
     color: #ffffff;
     opacity: 1;
 }
 
-input[type="text"] {
-    width: 250px;
-    left: 150px;
-    height: 50px;
-    background-color: #BAA0F2;
-    border-radius: 5px;
-    font-size: 18px;
-    border: none;
-    outline: none;
-}
 
 /*日期*/
 input[type="date"] {
     width: 250px;
     height: 50px;
-    left: 150px;
+    left: 300px;
     top: 40px;
 
     box-sizing: border-box;
@@ -285,3 +311,11 @@ input[type="date"] {
     cursor: pointer;
     border-radius: 3px;
 }
+#dataContainer {
+    left: 600px;
+    top: -120px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: #996AEC;
+  }

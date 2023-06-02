@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>健康營養紀錄表</title>
-    <link rel="stylesheet" href="bmi_count_css.css">
+    <link rel="stylesheet" href="recommand_food_css.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600" rel="stylesheet">
 
     <!--設定按鈕圖案-->
@@ -14,7 +14,7 @@
         input[type=button],
         input[type=submit],
         input[type=reset] {
-            background-color: black;
+            background-color: #BAA0F2;
             width: 250px;
             border: none;
             border-radius: 10px;
@@ -59,17 +59,46 @@
             </div>
             <!--搜尋的區塊-->
             <div class="box3">
-                <h3 id="search_word">利用bmi計算熱量</h3>
-                <form id="bmi_count_form">
-                    <input id="submit" type="submit" value="開始吧!">
-                </form>
-             <div id="dataContainer"></div>
+                <h3 id="search_word">查詢建議食物</h3>
+                <!--年齡-->
+                <form>
+                    <label id="nutri_word" for="age">選擇營養素</label>
+                    <select id="select_nutri">
+                        <option value="ca">鈣</option>
+                        <option value="fe">鐵</option>
+                        <option value="k">鉀</option>
+                        <option value="mg">鎂</option>
+                        <option value="na">鈉</option>
+                        <option value="p">磷</option>
+                        <option value="zn">鋅</option>
+                        <option value="carbohydrate">醣類</option>
+                        <option value="fat">脂肪</option>
+                        <option value="nicotine">尼古丁</option>
+                        <option value="protein">蛋白質</option>
+                        <option value="vitaminA">維他命A</option>
+                        <option value="vitaminB1">維他命B1</option>
+                        <option value="vitaminB2">維他命B2</option>
+                        <option value="vitaminB6">維他命B6</option>
+                        <option value="vitaminC">維他命C</option>
+                        <option value="vitaminE">維他命E</option>
+                        <option value="others">其他</option>
+                    </select>
+                    <br>
+                    <!--性別-->
+                    <label id="amount_word">份量(mg)</label>
+                    <input id="select_amount" type="text" field_input placeholder="  ex : 2">
+                    <!--按鈕-->
+                    <input id="submit" type="submit" value="查詢建議食物">
+                    <!--input type="button" id="button" value="提交" onclick="fetchData()"-->
+
+                    <!--golang資料-->
+                    <div id="dataContainer"></div>
+
             </div>
         </div>
-       
     </div>
     <!--對應的JS檔案-->
-    <script src="bmi_count.js"></script>
+    <script src="recommand_food.js"> </script>
 </body>
 
 </html>

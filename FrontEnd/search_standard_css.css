@@ -14,7 +14,7 @@ body {
 /*包住整個的*/
 .warp {
   /*margin: 0 auto;*/
-  width: 1520px;
+  width: 100%;
   display: flex;
   /*flex-direction: row;*/
 }
@@ -51,34 +51,19 @@ body {
   position: relative;
 }
 
-/*revise按鈕設定*/
-#revise {
-  width: 75px;
-  height: 30px;
-  left: 1200px;
-  top: 25%;
-  position: relative;
-  text-align: center;
-  line-height: 30px;
-
-  border-radius: 10px;
-  background-color: #996AEC;
-  color: mintcream;
-  text-decoration: none;
-}
 
 /*第二段*/
 .box2 {
   width: 17%;
-  height: 700px;
+  height: 100%;
   left: 0px;
   top: 50px;
   position: absolute;
   background-color: #BAA0F2;
   /*background-image: url('img/pic4.jpg');
-  background-size: 100% 90%;
-  background-repeat: no-repeat;
-  background-color: whitesmoke;*/
+background-size: 100% 90%;
+background-repeat: no-repeat;
+background-color: whitesmoke;*/
 }
 
 
@@ -92,8 +77,8 @@ body {
   border-radius: 10px;
   position: absolute;
   background-color: #F1EEF9;
-  display: flex;
-  flex-direction: row;
+  /*display: flex;
+flex-direction: row;*/
   /*border:  5px #996AEC solid;*/
 }
 
@@ -113,7 +98,7 @@ body {
 /*包在box2的功能欄位區塊*/
 .choose_box {
   width: 150px;
-  height: 300px;
+  height: 500px;
   left: 50px;
   top: 100px;
   border-radius: 10px;
@@ -139,6 +124,23 @@ body {
   color: #996AEC;
 }
 
+/*revise按鈕設定*/
+
+#revise {
+  width: 75px;
+  height: 30px;
+  left: 1200px;
+  top: 25%;
+  position: relative;
+  text-align: center;
+  line-height: 30px;
+
+  border-radius: 10px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
 /*查詢個人紀錄*/
 #record {
   width: 80%;
@@ -154,8 +156,8 @@ body {
   text-decoration: none;
 }
 
-/*新增個人飲食紀錄*/
-#update {
+/*查詢個人紀錄*/
+#create {
   width: 80%;
   height: 50px;
   top: 92.5px;
@@ -170,10 +172,25 @@ body {
 }
 
 /*查詢食物成分*/
-#food {
+#food_ingredient {
   width: 80%;
   height: 50px;
   top: 155px;
+  text-align: center;
+  line-height: 50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
+/*查詢食物營養素*/
+#food_nutri {
+  width: 80%;
+  height: 50px;
+  top: 217.5px;
   text-align: center;
   line-height: 50px;
   margin: 12.5px 12.5px;
@@ -188,13 +205,13 @@ body {
 #standard {
   width: 80%;
   height: 50px;
-  top: 217.5px;
+  top: 280px;
   text-align: center;
   line-height: 50px;
   margin: 12.5px 12.5px;
   position: absolute;
   border-radius: 50px;
-  background-color: #996AEC;
+  background-color: #000000;
   color: mintcream;
   text-decoration: none;
 }
@@ -203,7 +220,7 @@ body {
 #bmi_count {
   width: 80%;
   height: 50px;
-  top: 280px;
+  top: 342.5px;
   text-align: center;
   line-height: 50px;
   margin: 12.5px 12.5px;
@@ -214,34 +231,105 @@ body {
   text-decoration: none;
 }
 
-/*執行搜尋*/
-#go {
+#rec_food {
+  width: 80%;
+  height: 50px;
+  top: 405px;
+  text-align: center;
+  line-height: 50px;
+  margin: 12.5px 12.5px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: #996AEC;
+  color: mintcream;
+  text-decoration: none;
+}
+
+/*執行搜尋按鈕*/
+#submit {
   left: 700px;
   top: 275px;
   position: absolute;
+
   background-color: #BAA0F2;
+  width: 250px;
+  border: none;
+  border-radius: 10px;
+  color: #000000;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
   border: 3px black solid;
 }
 
-/*以下為選項*/
-.food {
+#search_word {
   left: 25px;
-  top: 190px;
+  top: 10px;
   position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #996AEC;
 }
 
-#date_word {
-  left: 70px;
+/*選擇年齡*/
+#age_word {
+  left: 25px;
   top: 50px;
   position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #996AEC;
 }
 
-#food_word {
-  left: -50px;
-  top: 180px;
+#select_age {
+  left: 100px;
+  top: 50px;
+  position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #BAA0F2;
+  width: 250px;
+  border: none;
+  border-radius: 10px;
+  color: mintcream;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/*選擇性別*/
+#gender_word {
+  left: 25px;
+  top: 75px;
+  position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #996AEC;
+}
+
+#select_gender {
+  left: 100px;
+  top: 75px;
+  position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #BAA0F2;
+  width: 250px;
+  border: none;
+  border-radius: 10px;
+  color: mintcream;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/*查詢的結果*/
+#dataContainer {
+  left: 500px;
+  top: -175px;
   position: relative;
 }
 
+
+/*日期*/
 ::placeholder {
   color: #ffffff;
   opacity: 1;
@@ -258,7 +346,6 @@ input[type="text"] {
   outline: none;
 }
 
-/*日期*/
 input[type="date"] {
   width: 250px;
   height: 50px;
@@ -283,42 +370,4 @@ input[type="date"] {
   padding: 5px;
   cursor: pointer;
   border-radius: 3px;
-}
-
-
-/*以下為選項*/
-.sex {
-  left: 50px;
-  top: 20px;
-  position: absolute;
-}
-
-.age {
-  left: 300px;
-  top: 20px;
-  position: absolute;
-}
-
-.height {
-  left: 50px;
-  top: 120px;
-  position: absolute;
-}
-
-.weight {
-  left: 300px;
-  top: 120px;
-  position: absolute;
-}
-
-.food {
-  left: 550px;
-  top: 120px;
-  position: absolute;
-}
-
-.work {
-  left: 50px;
-  top: 200px;
-  position: absolute;
 }

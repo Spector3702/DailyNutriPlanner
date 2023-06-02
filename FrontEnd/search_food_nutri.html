@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>健康營養紀錄表</title>
-    <link rel="stylesheet" href="bmi_count_css.css">
+    <link rel="stylesheet" href="search_food_nutri_css.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600" rel="stylesheet">
 
     <!--設定按鈕圖案-->
@@ -50,6 +50,7 @@
                 <a id="standard" href="search_standard.html">查詢標準攝取量</a>
                 <a id="bmi_count" href="bmi_count.html">查詢所需熱量</a>
                 <a id="rec_food" href="recommand_food.html">查詢建議食物</a>
+
             </div>
             <!--文字說明-->
             <div class="start">
@@ -59,17 +60,23 @@
             </div>
             <!--搜尋的區塊-->
             <div class="box3">
-                <h3 id="search_word">利用bmi計算熱量</h3>
-                <form id="bmi_count_form">
-                    <input id="submit" type="submit" value="開始吧!">
+                <h3 id="search_word">查詢食物營養素</h3>
+                <form id="form">
+                    <!--食物-->
+                    <!--label for="food" class="ha-screen-reader">食物</label-->
+                    <label id="food_word" for="food">請輸入你吃了什麼</label>
+                    <input id="select_food" type="text" placeholder="  ex : 水果">
+                    <input id="submit" type="submit" value="查詢食物營養素">
                 </form>
-             <div id="dataContainer"></div>
+
+                <!--golang資料-->
+                <div id="dataContainer"></div>
             </div>
+
         </div>
-       
     </div>
     <!--對應的JS檔案-->
-    <script src="bmi_count.js"></script>
+    <script src="search_food_nutri.js"></script>
 </body>
 
 </html>
