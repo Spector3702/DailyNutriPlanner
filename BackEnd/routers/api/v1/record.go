@@ -67,29 +67,8 @@ func (r *RecordRouter) GetRecordsByDateAndEmail(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"records": records})
 }
 
-func (r *RecordRouter) GetRecordsByDate(c *gin.Context) {
-	dateString := c.Query("date")
-	date, err := time.Parse("2006-01-02", dateString)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid date format"})
-		return
-	}
-
-	records, err := r.r.GetRecordsByDate(date)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
-
-	c.JSON(http.StatusOK, gin.H{"records": records})
-}
-
 func (r *RecordRouter) Setup(rg *gin.RouterGroup) {
 	record := rg.Group("v1/record")
 	record.POST("/create/", r.CreateRecord)
-<<<<<<< HEAD
-	record.GET("/date/", r.GetRecordsByDate)
-=======
 	record.GET("/daily/", r.GetRecordsByDateAndEmail)
->>>>>>> 07a620b99b868d8ac500ddce602cdcdad6fa3c1e
 }
