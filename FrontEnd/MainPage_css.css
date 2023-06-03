@@ -310,10 +310,17 @@ input[type="text"] {
 }
 
 #dataContainer {
+  width: 180px;
   left: 600px;
-  top: -30px;
+  top: -50px;
   position: relative;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 20px;
   color: #996AEC;
+  font-size: 20px;
+  text-align: center;
+  line-height: 60px;
+  background-color: white;
+  border-radius: 50px;
+  font-weight:bold;
 }

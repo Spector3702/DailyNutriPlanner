@@ -2,12 +2,12 @@ document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     //利用getElementById抓取在form中的email文字
-    const responseObj = JSON.parse(localStorage.getItem("responseData"));
-    var weight = responseObj.Weight
-    var height = responseObj.Height
-    var workload = responseObj.WorkLoad
-    var gender = responseObj.Gender
-    var age = responseObj.Age
+    var responseObj = JSON.parse(localStorage.getItem("responseData"));
+    var weight = responseObj.weight;
+    var height = responseObj.height;
+    var workload = responseObj.workLoad;
+    var gender = responseObj.gender;
+    var age = responseObj.age;
 
 
     //利用baseUrl加上email才是request Url
@@ -25,14 +25,14 @@ document.querySelector('form').addEventListener('submit', function (event) {
             if (response.ok) {
                 // 登入成功
                 return response.json().then(responseData => {
-                    console.log(responseData)
+                    console.log(responseData);
                     var dataContainer = document.getElementById('dataContainer');
                     //dataContainer.textContent = JSON.stringify(data);
                     var cal = JSON.stringify(responseData.calory);
                     dataContainer.innerHTML = "";
 
                     //dataContainer.innerHTML = age + select_value+"<br>";
-                    dataContainer.innerHTML = "查詢結果 :<br>根據你的身高與體重算出的BMI,你的建議攝取量是<br>"+ cal + "(cal)唷<br>";
+                    dataContainer.innerHTML = "查詢結果 :<br>根據你的身高與體重算出的BMI,你的建議攝取量是<br>"+ cal + "(kcal)唷<br>";
                 });
             } else {
                 // 登入失敗，跳轉到註冊頁面

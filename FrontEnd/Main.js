@@ -5,7 +5,7 @@ document.getElementById('createform').addEventListener('submit', function (event
     var food = document.getElementById('food_bar').value;
     var data = localStorage.getItem('responseData');
     var parsedData = JSON.parse(data);
-    var email = parsedData['Email'];
+    var email = parsedData['email'];
 
     //建一個變數來儲存剛剛的那些資料
     var formData = new URLSearchParams();
@@ -28,12 +28,19 @@ document.getElementById('createform').addEventListener('submit', function (event
         .then(responseData => {
             console.log(responseData);
             var dataContainer = document.getElementById('dataContainer');
-            dataContainer.innerHTML = "";
-            dataContainer.innerHTML = "新增成功!";
+            if(responseData.error=='record not found'){
+                dataContainer.innerHTML = "";
+                dataContainer.innerHTML = "新增失敗!<br>請檢查輸入名稱";
+            }
+            else{
+                dataContainer.innerHTML = "";
+                dataContainer.innerHTML = "新增成功!";
+            }
+            
             
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error('Error:錯誤', error);
         });
 
 });

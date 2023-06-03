@@ -41,27 +41,37 @@ document.querySelector('form').addEventListener('submit', function (event) {
             //test
             //dataContainer.innerHTML = "查詢結果" + select+"<br>";
             //成功查詢的表格
+            if(name=data.name){
             var rowElement = document.createElement("div");
             rowElement.innerHTML = `
             
               <h3>成功查詢</h3>
               <table>
-              <colgroup span="4" style="background-color: #BAA0F2;"></colgroup>
-              <tr>
-                <td>食物成稱</td>
-                <td>別名</td>
-                <td>英文名稱</td>
-                <td>食物狀況</td>
-              </tr>
-              <tr>
-                <td>${data.name}</td>
-                <td>${data.other_name}</td>
-                <td>${data.english_name}</td>
-                <td>${data.describe}</td>
-              </tr>
+              <thead>
+                <th>食物成稱</th>
+                <th>別名</th>
+                <th>英文名稱</th>
+                <th>食物狀況</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>${data.name}</td>
+                  <td>${data.other_name}</td>
+                  <td>${data.english_name}</td>
+                  <td>${data.describe}</td>
+                </tr>
+              </tbody>
               </table>
               `;
             dataContainer.appendChild(rowElement);
+            }
+            else{
+              var rowElement = document.createElement("div");
+              rowElement.innerHTML = `       
+              <h3>查詢失敗<br>請檢查輸入的名稱是否錯誤</h3>  
+              `;
+              dataContainer.appendChild(rowElement);
+            }
             /*data.forEach(row => {
               if (row.age === select_value) {
                 var rowElement = document.createElement("div");

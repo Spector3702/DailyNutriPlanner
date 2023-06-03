@@ -55,7 +55,7 @@ body {
 /*第二段*/
 .box2 {
   width: 17%;
-  height: 100%;
+  height: 900px;
   left: 0px;
   top: 50px;
   position: absolute;
@@ -323,8 +323,8 @@ flex-direction: row;*/
 
 /*查詢的結果*/
 #dataContainer {
-  left: 500px;
-  top: -175px;
+  left: 25px;
+  top: 120px;
   position: relative;
 }
 
@@ -370,4 +370,41 @@ input[type="date"] {
   padding: 5px;
   cursor: pointer;
   border-radius: 3px;
+}
+/*table style*/
+.main {
+  width: 60%;
+  margin: 20px auto;
+}
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+tr {
+  text-align: center;
+}
+th {
+  padding: 10px;
+}
+table tbody tr:nth-child(odd){
+  background-color: #eee
+}
+table thead {
+  background-color: #BAA0F2;
+  color: white;
+}
+table thead th:first-child {
+  border-radius: 5px 0 0 0;
+  border: 1px solid #BAA0F2;
+}
+table thead th:last-child {
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #BAA0F2;
+}
+table tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tbody tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
 }

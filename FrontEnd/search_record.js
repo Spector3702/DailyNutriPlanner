@@ -3,9 +3,10 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
     //利用getElementById抓取在form中的email文字
     var date = document.getElementById('date').value;
+    const responseObj = JSON.parse(localStorage.getItem("responseData"));
     console.log(date);
     //利用baseUrl加上email才是request Url
-    const Url = 'http://127.0.0.1:8080/api/v1/record/date/?date=' + date;
+    const Url = 'http://127.0.0.1:8080/api/v1/record/daily/?date=' + date + "&email="+responseObj.email;
 
 
     //利用get傳送email 給api 

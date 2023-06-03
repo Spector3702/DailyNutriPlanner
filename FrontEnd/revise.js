@@ -39,11 +39,16 @@ document.getElementById('Reviseform').addEventListener('submit', function (event
             console.log(responseData);
             // 註冊成功後就用本地端儲存responseData，然後就跳轉到MainPage
             localStorage.setItem('responseData', JSON.stringify(responseData));
-            console.log(responseData)
+            console.log(responseData);
             // window.location.href = "MainPage.html";
+            dataContainer.innerHTML = "";
+            var rowElement = document.createElement("div");
+              rowElement.innerHTML = `       
+              <h3>修改成功!</h3>  
+              `;
+            dataContainer.appendChild(rowElement);
         })
         .catch(error => {
-            console.error('Error:', error);
         });
 
 });

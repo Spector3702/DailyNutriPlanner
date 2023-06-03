@@ -352,10 +352,17 @@ input[type="text"] {
 }
 
 #dataContainer {
+    width: 300px;
+    height: 200px;
     left: 600px;
     top: -150px;
     position: relative;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
     color: #996AEC;
+    background-color: white;
+    border-radius: 50px;
+    font-weight:bold;
   }
