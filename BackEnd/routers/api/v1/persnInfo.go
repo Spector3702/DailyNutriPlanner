@@ -61,12 +61,12 @@ func (r *persnInfoRouter) LoginByEmail(c *gin.Context) {
 	}
 
 	c.IndentedJSON(http.StatusOK, gin.H{
-		"Email":     persnInfo.Email,
-		"Gender":    persnInfo.Gender,
-		"Age":       persnInfo.Age,
-		"Weight":    persnInfo.Weight,
-		"Height":    persnInfo.Height,
-		"Work_load": persnInfo.Work_load,
+		"email":     persnInfo.Email,
+		"gender":    persnInfo.Gender,
+		"age":       persnInfo.Age,
+		"weight":    persnInfo.Weight,
+		"height":    persnInfo.Height,
+		"work_load": persnInfo.Work_load,
 	})
 }
 
