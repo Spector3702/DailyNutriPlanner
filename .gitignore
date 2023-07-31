@@ -1,2 +1,4 @@
 BackEnd/go.mod
 BackEnd/go.sum
+.DS_Store
+__pycache__/
